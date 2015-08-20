@@ -137,7 +137,7 @@ mView.setOnClickListener(new View.OnClickListener() {
 
 #####Styling
 
-To animate the ActionBar, define put toolbar view in your layout, then apply this styling
+To animate the ActionBar, put toolbar view in your layout, then apply this styling
 
 ```xml
 <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
