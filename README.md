@@ -22,7 +22,7 @@ Minimum SDK level of API 9 (2.3+). However as of this writing, the animation wil
 Importing
 ---------
 
-Download and use as jar <a href="https://github.com/HendraAnggrian/CircularRevealActivity/blob/master/circular-reveal-activity-0.1.jar?raw=true">circular-reveal-activity-0.1.jar<a/>
+The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/CircularRevealActivity/blob/master/circularrevealactivity/release/circular-reveal-activity-0.1.jar?raw=true">circular-reveal-activity-0.1.jar<a/>
 
 or
 
