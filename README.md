@@ -28,8 +28,9 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- layout below naming is important -->
     <FrameLayout
-        android:id="@+id/layout" //this layout naming is important
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         
