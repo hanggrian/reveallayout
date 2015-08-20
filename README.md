@@ -53,4 +53,4 @@ Then you have 2 choices of layout reveal animation starting point: **Static** an
 - Bottom
 - Bottom Right
 
-**Dynamic** starting points are pre-defined into 9 possible points:
+**Dynamic** starting points are defined by int X and Y point captured from OnTouchListener
