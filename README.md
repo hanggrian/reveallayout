@@ -6,8 +6,10 @@ Activity implementation of ozodrukh's wonderful <a href="http://www.youtube.com/
 
 <img src="http://i.imgur.com/JrUkWYe.gif" />
 
-
 Note
 ====
 
-depends from Jake Wharton's NineOldsAndroid, or use my modifed version (included auto cancel)
+Relies heavily to:
+- This will be a list item
+
+- This will be a list item
