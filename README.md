@@ -42,7 +42,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
 
-**Static** starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right
+**Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right**
 
 ```java
 public class MyActivity extends StaticCircularRevealActivity {
@@ -75,9 +75,60 @@ Calling it
 Bundle bundle = new Bundle();
 bundle.putInt("EXTRA_GRAVITY", Gravity.TOP_LEFT);
 
-Intent intent = new Intent(rootView.getContext(), HelloWorldStaticActivity.class);
+Intent intent = new Intent(context, MyActivity.class);
 intent.putExtras(bundle);
 startActivity(intent);
 ```
 
-**Dynamic** starting points are defined by int X and Y point captured from OnTouchListener
+**Dynamic starting points are defined by int X and Y point**
+
+```java
+public class MyActivity extends DynamicCircularRevealActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // do not setContentView(...) here, instead put the layout res id below
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_hello_world;
+    }
+
+    @Override
+    protected DynamicCircularReveal getDynamicCircularReveal() {
+        DynamicCircularReveal spec = new DynamicCircularReveal();
+        spec.setViewResId(R.id.layout);
+        spec.setX(getIntent().getExtras().getInt("EXTRA_X"));
+        spec.setY(getIntent().getExtras().getInt("EXTRA_Y"));
+        spec.setDuration(500);
+        return spec;
+    }
+}
+```
+
+You can get these X and Y points from OnTouchListener
+
+```java
+View mView = findViewById(R.id.view);
+Bundle bundle = new Bundle();
+
+mView.setOnTouchListener(new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        bundle.putInt("EXTRA_X", (int) event.getRawX());
+        bundle.putInt("EXTRA_Y", (int) event.getRawY());
+        return false;
+    }
+});
+        
+mView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(context, MyActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+});
+```
