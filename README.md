@@ -42,7 +42,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
 
-#####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right**
+#####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right
 
 ```java
 public class MyActivity extends StaticCircularRevealActivity {
@@ -55,7 +55,7 @@ public class MyActivity extends StaticCircularRevealActivity {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_hello_world;
+        return R.layout.activity_layout;
     }
 
     @Override
@@ -93,7 +93,7 @@ public class MyActivity extends DynamicCircularRevealActivity {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_hello_world;
+        return R.layout.activity_layout;
     }
 
     @Override
@@ -132,3 +132,15 @@ mView.setOnClickListener(new View.OnClickListener() {
     }
 });
 ```
+
+#####Styling
+
+```xml
+<style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- your styling -->
+
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+</style>
+```
+
