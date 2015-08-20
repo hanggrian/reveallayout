@@ -27,8 +27,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- layout below naming is important -->
+    
     <FrameLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -40,3 +39,5 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
 </io.codetail.widget.RevealFrameLayout>
 ```
+
+Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
