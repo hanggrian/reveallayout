@@ -1,12 +1,19 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.0.2"
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 22
+        minSdkVersion 11
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -16,3 +23,17 @@ dependencies {
 
     compile 'com.nineoldandroids:library:2.4.0'
 }
+
+// task to delete old jar
+task deleteOldJar(type: Delete) {
+    delete 'release/circular-reveal-activity-0.1.jar'
+}
+
+task exportJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('release/')
+    include('classes.jar')
+    rename('classes.jar', 'circular-reveal-activity-0.1.jar')
+}
+
+exportJar.dependsOn(deleteOldJar, build)
