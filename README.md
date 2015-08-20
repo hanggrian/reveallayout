@@ -41,3 +41,5 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
 ```
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
+
+**Static** starting points are pre-defined into 9 points: top left, top, top right, center left, center, and so on...
