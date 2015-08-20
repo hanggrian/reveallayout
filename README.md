@@ -16,3 +16,26 @@ Requirements
 ------------
 
 Minimum SDK level of API 9 (2.3+). However as of this writing, the animation will only occur on API 21 (5.0+). When implemented in API below 21, normal activity transition will occur.
+
+Using
+-----
+
+Use `RevealFrameLayout` or `RevealLinearLayout` as root
+
+```xml
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/layout" <!-- this layout naming is important -->
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <!-- content of activity should be here -->
+        
+    <FrameLayout/>
+
+</io.codetail.widget.RevealFrameLayout>
+```
