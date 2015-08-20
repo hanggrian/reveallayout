@@ -19,6 +19,15 @@ Requirements
 
 Minimum SDK level of API 9 (2.3+). However as of this writing, the animation will only occur on API 21 (5.0+). When implemented in API below 21, normal activity transition will occur.
 
+How to Use
+----------
+
+Download and use as jar <a href="https://github.com/HendraAnggrian/CircularRevealActivity/blob/master/circular-reveal-activity-0.1.jar?raw=true">circular-reveal-activity-0.1.jar<a/>
+
+or
+
+Download <a href="https://github.com/HendraAnggrian/CircularRevealActivity/blob/circularrevealactivity">library<a/> and import it in Project Structure as gradle project
+
 Using
 -----
 
