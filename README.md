@@ -8,9 +8,11 @@ Activity implementation of ozodrukh's wonderful <a href="https://github.com/ozod
 Note
 ----
 
-Relies heavily and thanks to:
+This is my first release of my first GitHub contribution, all thanks to:
 - ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
 - Jake Wharton's <a href="https://github.com/JakeWharton/NineOldAndroids">NineOldAndroids<a/>
+
+For any concern, please email me: hendraanggrian@gmail.com
 
 Requirements
 ------------
