@@ -10,4 +10,4 @@ Note
 
 Relies heavily to:
 - ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
-- This will be a list item
+- Jake Wharton's <a href="https://github.com/JakeWharton/NineOldAndroids">NineOldAndroids<a/>
