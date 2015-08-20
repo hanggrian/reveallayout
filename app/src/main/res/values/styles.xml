@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="CircularRevealTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">?colorAccent</item>
+        <item name="colorPrimaryDark">?colorAccent</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>

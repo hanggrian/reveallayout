@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/victorleonardo/AndroidStudioLibraries/CircularRevealActivitySample/app/build/intermediates/exploded-aar/CircularRevealActivitySample/circularrevealactivity/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4f877bdb00d992dbfe03a101d857b18b5c2d3f52">
+        <dex dex="/Users/victorleonardo/AndroidStudioLibraries/CircularRevealActivitySample/app/build/intermediates/pre-dexed/debug/classes-cd2c690bee3964e6c76cfa427913273223375ea0.jar" />
+    </item>
+
+</items>
