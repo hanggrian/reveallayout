@@ -15,3 +15,4 @@ Relies heavily and thanks to:
 Requirements
 ------------
 
+Minimum SDK level of API 9 (2.3+). However as of this writing, the animation will only occur on API 21 (5.0+). When implemented in API below 21, normal activity transition will occur.
