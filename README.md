@@ -42,7 +42,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
 
-####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right**
+#####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right**
 
 ```java
 public class MyActivity extends StaticCircularRevealActivity {
@@ -80,7 +80,7 @@ intent.putExtras(bundle);
 startActivity(intent);
 ```
 
-####Dynamic starting points are defined by int X and Y point
+#####Dynamic starting points are defined by int X and Y point
 
 ```java
 public class MyActivity extends DynamicCircularRevealActivity {
