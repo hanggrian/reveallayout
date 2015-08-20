@@ -6,8 +6,12 @@ Activity implementation of ozodrukh's wonderful <a href="https://github.com/ozod
 <img src="http://i.imgur.com/JrUkWYe.gif" />
 
 Note
-====
+----
 
-Relies heavily to:
+Relies heavily and thanks to:
 - ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
 - Jake Wharton's <a href="https://github.com/JakeWharton/NineOldAndroids">NineOldAndroids<a/>
+
+Requirements
+------------
+
