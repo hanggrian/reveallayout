@@ -3,7 +3,7 @@ package com.hendraanggrian.circularrevealactivitysample;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.hendraanggrian.circularrevealactivity.ActivityStaticRevealProperties;
+import com.hendraanggrian.circularrevealactivity.RevealProperties;
 import com.hendraanggrian.circularrevealactivity.StaticCircularRevealActivity;
 
 public class HelloWorldStaticActivity extends StaticCircularRevealActivity {
@@ -23,11 +23,12 @@ public class HelloWorldStaticActivity extends StaticCircularRevealActivity {
     }
 
     @Override
-    protected ActivityStaticRevealProperties getStaticCircularReveal() {
-        ActivityStaticRevealProperties prop = new ActivityStaticRevealProperties();
+    protected RevealProperties getRevealProperties() {
+        RevealProperties prop = new RevealProperties();
         prop.setViewResId(R.id.layout);
         prop.setGravity(getIntent().getExtras().getInt("EXTRA_GRAVITY"));
-        prop.setDuration(500);
+        prop.setDuration(500); // default value if not defined is 500
+        prop.setAnimateExit(true); // default value if not defined is false
         return prop;
     }
 }

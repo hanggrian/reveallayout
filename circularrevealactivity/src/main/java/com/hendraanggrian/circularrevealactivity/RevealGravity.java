@@ -3,7 +3,7 @@ package com.hendraanggrian.circularrevealactivity;
 /**
  * Created by victorleonardo on 8/19/15.
  */
-public class Gravity {
+public class RevealGravity {
 
     public static final int TOP_LEFT = 1;
     public static final int TOP = 2;

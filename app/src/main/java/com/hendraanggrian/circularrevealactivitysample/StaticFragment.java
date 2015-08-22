@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.hendraanggrian.circularrevealactivity.Gravity;
+import com.hendraanggrian.circularrevealactivity.RevealGravity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -50,31 +50,31 @@ public class StaticFragment extends Fragment {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.button_TopLeft:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.TOP_LEFT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP_LEFT);
                     break;
                 case R.id.button_Top:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.TOP);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP);
                     break;
                 case R.id.button_TopRight:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.TOP_RIGHT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP_RIGHT);
                     break;
                 case R.id.button_CenterLeft:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.CENTER_LEFT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.CENTER_LEFT);
                     break;
                 case R.id.button_Center:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.CENTER);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.CENTER);
                     break;
                 case R.id.button_CenterRight:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.CENTER_RIGHT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.CENTER_RIGHT);
                     break;
                 case R.id.button_BottomLeft:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.BOTTOM_LEFT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.BOTTOM_LEFT);
                     break;
                 case R.id.button_Bottom:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.BOTTOM);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.BOTTOM);
                     break;
                 case R.id.button_BottomRight:
-                    bundle.putInt("EXTRA_GRAVITY", Gravity.BOTTOM_RIGHT);
+                    bundle.putInt("EXTRA_GRAVITY", RevealGravity.BOTTOM_RIGHT);
                     break;
             }
 

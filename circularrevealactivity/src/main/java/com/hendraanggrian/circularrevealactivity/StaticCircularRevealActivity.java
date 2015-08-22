@@ -16,16 +16,18 @@ public abstract class StaticCircularRevealActivity extends AppCompatActivity {
 
     private int REVEAL_VIEW_RES_ID;
     private int REVEAL_GRAVITY;
-    private int REVEAL_DURATION;
+    private int REVEAL_DURATION = 500; // default value
+    private boolean REVEAL_ANIMATE_EXIT = false; // default value
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
 
-        REVEAL_VIEW_RES_ID = getStaticCircularReveal().getViewResId();
-        REVEAL_GRAVITY = getStaticCircularReveal().getGravity();
-        REVEAL_DURATION = getStaticCircularReveal().getDuration();
+        REVEAL_VIEW_RES_ID = getRevealProperties().getViewResId();
+        REVEAL_GRAVITY = getRevealProperties().getGravity();
+        REVEAL_DURATION = getRevealProperties().getDuration();
+        REVEAL_ANIMATE_EXIT = getRevealProperties().isAnimateExit();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             findViewById(REVEAL_VIEW_RES_ID).addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
@@ -39,39 +41,39 @@ public abstract class StaticCircularRevealActivity extends AppCompatActivity {
                     int mY = 0;
 
                     switch (REVEAL_GRAVITY) {
-                        case Gravity.TOP_LEFT:
+                        case RevealGravity.TOP_LEFT:
                             mX = mView.getLeft();
                             mY = mView.getTop();
                             break;
-                        case Gravity.TOP:
+                        case RevealGravity.TOP:
                             mX = (mView.getLeft() + mView.getRight()) / 2;
                             mY = mView.getTop();
                             break;
-                        case Gravity.TOP_RIGHT:
+                        case RevealGravity.TOP_RIGHT:
                             mX = mView.getRight();
                             mY = mView.getTop();
                             break;
-                        case Gravity.CENTER_LEFT:
+                        case RevealGravity.CENTER_LEFT:
                             mX = mView.getLeft();
                             mY = (mView.getTop() + mView.getBottom()) / 2;
                             break;
-                        case Gravity.CENTER:
+                        case RevealGravity.CENTER:
                             mX = (mView.getLeft() + mView.getRight()) / 2;
                             mY = (mView.getTop() + mView.getBottom()) / 2;
                             break;
-                        case Gravity.CENTER_RIGHT:
+                        case RevealGravity.CENTER_RIGHT:
                             mX = mView.getRight();
                             mY = (mView.getTop() + mView.getBottom()) / 2;
                             break;
-                        case Gravity.BOTTOM_LEFT:
+                        case RevealGravity.BOTTOM_LEFT:
                             mX = mView.getLeft();
                             mY = mView.getBottom();
                             break;
-                        case Gravity.BOTTOM:
+                        case RevealGravity.BOTTOM:
                             mX = (mView.getLeft() + mView.getRight()) / 2;
                             mY = mView.getBottom();
                             break;
-                        case Gravity.BOTTOM_RIGHT:
+                        case RevealGravity.BOTTOM_RIGHT:
                             mX = mView.getRight();
                             mY = mView.getBottom();
                             break;
@@ -91,7 +93,7 @@ public abstract class StaticCircularRevealActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && REVEAL_ANIMATE_EXIT) {
             mAnimator = mAnimator.reverse();
             mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
             mAnimator.setDuration(REVEAL_DURATION);
@@ -126,5 +128,5 @@ public abstract class StaticCircularRevealActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResId();
 
-    protected abstract ActivityStaticRevealProperties getStaticCircularReveal();
+    protected abstract RevealProperties getRevealProperties();
 }

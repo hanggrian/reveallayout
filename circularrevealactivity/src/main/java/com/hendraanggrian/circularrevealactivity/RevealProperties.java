@@ -1,21 +1,16 @@
 package com.hendraanggrian.circularrevealactivity;
 
-public class ActivityDynamicRevealProperties {
+public class RevealProperties {
 
     private int viewResId;
+    private int gravity;
     private int x;
     private int y;
     private int duration;
+    private boolean animateExit;
 
-    public ActivityDynamicRevealProperties() {
+    public RevealProperties() {
 
-    }
-
-    public ActivityDynamicRevealProperties(int viewResId, int x, int y, int duration) {
-        this.setViewResId(viewResId);
-        this.setX(x);
-        this.setY(y);
-        this.setDuration(duration);
     }
 
     public int getViewResId() {
@@ -24,6 +19,14 @@ public class ActivityDynamicRevealProperties {
 
     public void setViewResId(int viewResId) {
         this.viewResId = viewResId;
+    }
+
+    public int getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(int gravity) {
+        this.gravity = gravity;
     }
 
     public int getX() {
@@ -48,5 +51,13 @@ public class ActivityDynamicRevealProperties {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public boolean isAnimateExit() {
+        return animateExit;
+    }
+
+    public void setAnimateExit(boolean animateExit) {
+        this.animateExit = animateExit;
     }
 }

@@ -17,17 +17,19 @@ public abstract class DynamicCircularRevealActivity extends AppCompatActivity {
     private int REVEAL_VIEW_RES_ID;
     private int REVEAL_X;
     private int REVEAL_Y;
-    private int REVEAL_DURATION;
+    private int REVEAL_DURATION = 500; // default value
+    private boolean REVEAL_ANIMATE_EXIT = false; // default value
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
 
-        REVEAL_VIEW_RES_ID = getDynamicCircularReveal().getViewResId();
-        REVEAL_X = getDynamicCircularReveal().getX();
-        REVEAL_Y = getDynamicCircularReveal().getY();
-        REVEAL_DURATION = getDynamicCircularReveal().getDuration();
+        REVEAL_VIEW_RES_ID = getRevealProperties().getViewResId();
+        REVEAL_X = getRevealProperties().getX();
+        REVEAL_Y = getRevealProperties().getY();
+        REVEAL_DURATION = getRevealProperties().getDuration();
+        REVEAL_ANIMATE_EXIT = getRevealProperties().isAnimateExit();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             findViewById(REVEAL_VIEW_RES_ID).addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
@@ -50,7 +52,7 @@ public abstract class DynamicCircularRevealActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && REVEAL_ANIMATE_EXIT) {
             mAnimator = mAnimator.reverse();
             mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
             mAnimator.setDuration(REVEAL_DURATION);
@@ -85,5 +87,5 @@ public abstract class DynamicCircularRevealActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResId();
 
-    protected abstract ActivityDynamicRevealProperties getDynamicCircularReveal();
+    protected abstract RevealProperties getRevealProperties();
 }
