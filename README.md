@@ -1,6 +1,8 @@
 CircularRevealActivity
 ======================
 
+For dialog, check <a href="https://github.com/HendraAnggrian/CircularRevealDialog">CircularRevealDialog<a/>
+
 Activity implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
 <img src="http://i.imgur.com/JrUkWYe.gif" />
