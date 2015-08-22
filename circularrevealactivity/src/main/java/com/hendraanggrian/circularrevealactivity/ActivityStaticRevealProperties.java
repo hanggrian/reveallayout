@@ -1,16 +1,16 @@
 package com.hendraanggrian.circularrevealactivity;
 
-public class StaticCircularReveal {
+public class ActivityStaticRevealProperties {
 
     private int viewResId;
     private int gravity;
     private int duration;
 
-    public StaticCircularReveal() {
+    public ActivityStaticRevealProperties() {
 
     }
 
-    public StaticCircularReveal(int viewResId, int gravity, int duration) {
+    public ActivityStaticRevealProperties(int viewResId, int gravity, int duration) {
         this.setViewResId(viewResId);
         this.setGravity(gravity);
         this.setDuration(duration);

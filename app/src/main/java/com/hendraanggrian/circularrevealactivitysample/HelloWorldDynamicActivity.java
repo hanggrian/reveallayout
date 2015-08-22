@@ -3,7 +3,7 @@ package com.hendraanggrian.circularrevealactivitysample;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.hendraanggrian.circularrevealactivity.DynamicCircularReveal;
+import com.hendraanggrian.circularrevealactivity.ActivityDynamicRevealProperties;
 import com.hendraanggrian.circularrevealactivity.DynamicCircularRevealActivity;
 
 public class HelloWorldDynamicActivity extends DynamicCircularRevealActivity {
@@ -23,12 +23,12 @@ public class HelloWorldDynamicActivity extends DynamicCircularRevealActivity {
     }
 
     @Override
-    protected DynamicCircularReveal getDynamicCircularReveal() {
-        DynamicCircularReveal spec = new DynamicCircularReveal();
-        spec.setViewResId(R.id.layout);
-        spec.setX(getIntent().getExtras().getInt("EXTRA_X"));
-        spec.setY(getIntent().getExtras().getInt("EXTRA_Y"));
-        spec.setDuration(500);
-        return spec;
+    protected ActivityDynamicRevealProperties getDynamicCircularReveal() {
+        ActivityDynamicRevealProperties prop = new ActivityDynamicRevealProperties();
+        prop.setViewResId(R.id.layout);
+        prop.setX(getIntent().getExtras().getInt("EXTRA_X"));
+        prop.setY(getIntent().getExtras().getInt("EXTRA_Y"));
+        prop.setDuration(500);
+        return prop;
     }
 }

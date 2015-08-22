@@ -1,17 +1,17 @@
 package com.hendraanggrian.circularrevealactivity;
 
-public class DynamicCircularReveal {
+public class ActivityDynamicRevealProperties {
 
     private int viewResId;
     private int x;
     private int y;
     private int duration;
 
-    public DynamicCircularReveal() {
+    public ActivityDynamicRevealProperties() {
 
     }
 
-    public DynamicCircularReveal(int viewResId, int x, int y, int duration) {
+    public ActivityDynamicRevealProperties(int viewResId, int x, int y, int duration) {
         this.setViewResId(viewResId);
         this.setX(x);
         this.setY(y);

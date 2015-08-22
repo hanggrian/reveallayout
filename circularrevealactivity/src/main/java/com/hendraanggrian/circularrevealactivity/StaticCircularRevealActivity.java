@@ -126,5 +126,5 @@ public abstract class StaticCircularRevealActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResId();
 
-    protected abstract StaticCircularReveal getStaticCircularReveal();
+    protected abstract ActivityStaticRevealProperties getStaticCircularReveal();
 }

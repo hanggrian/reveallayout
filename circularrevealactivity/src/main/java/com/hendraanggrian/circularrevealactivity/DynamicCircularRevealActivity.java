@@ -85,5 +85,5 @@ public abstract class DynamicCircularRevealActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResId();
 
-    protected abstract DynamicCircularReveal getDynamicCircularReveal();
+    protected abstract ActivityDynamicRevealProperties getDynamicCircularReveal();
 }
