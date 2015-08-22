@@ -72,12 +72,13 @@ public class MyActivity extends StaticCircularRevealActivity {
     }
 
     @Override
-    protected StaticCircularReveal getStaticCircularReveal() {
-        StaticCircularReveal spec = new StaticCircularReveal();
-        spec.setViewResId(R.id.layout);
-        spec.setGravity(getIntent().getExtras().getInt("EXTRA_GRAVITY"));
-        spec.setDuration(500);
-        return spec;
+    protected RevealProperties getRevealProperties() {
+        RevealProperties prop = new RevealProperties();
+        prop.setViewResId(R.id.layout);
+        prop.setGravity(getIntent().getExtras().getInt("EXTRA_GRAVITY"));
+        prop.setDuration(500); // default value if not defined is 500
+        prop.setAnimateExit(true); // default value if not defined is false
+        return prop;
     }
 }
 ```
@@ -110,13 +111,14 @@ public class MyActivity extends DynamicCircularRevealActivity {
     }
 
     @Override
-    protected DynamicCircularReveal getDynamicCircularReveal() {
-        DynamicCircularReveal spec = new DynamicCircularReveal();
-        spec.setViewResId(R.id.layout);
-        spec.setX(getIntent().getExtras().getInt("EXTRA_X"));
-        spec.setY(getIntent().getExtras().getInt("EXTRA_Y"));
-        spec.setDuration(500);
-        return spec;
+    protected RevealProperties getRevealProperties() {
+        RevealProperties prop = new RevealProperties();
+        prop.setViewResId(R.id.layout);
+        prop.setX(getIntent().getExtras().getInt("EXTRA_X"));
+        prop.setY(getIntent().getExtras().getInt("EXTRA_Y"));
+        prop.setDuration(500); // default value if not defined is 500
+        prop.setAnimateExit(true); // default value if not defined is false
+        return prop;
     }
 }
 ```
