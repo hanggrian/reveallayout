@@ -87,7 +87,7 @@ Calling it
 
 ```java
 Bundle bundle = new Bundle();
-bundle.putInt("EXTRA_GRAVITY", Gravity.TOP_LEFT);
+bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP_LEFT);
 
 Intent intent = new Intent(context, MyActivity.class);
 intent.putExtras(bundle);
