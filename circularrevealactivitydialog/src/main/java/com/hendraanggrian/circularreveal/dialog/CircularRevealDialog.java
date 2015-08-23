@@ -19,7 +19,7 @@ import io.codetail.animation.ViewAnimationUtils;
 /**
  * Created by victorleonardo on 8/22/15.
  */
-public abstract class CircularRevealDialog extends Dialog {
+public class CircularRevealDialog extends Dialog {
 
     private int REVEAL_VIEW_RES_ID;
     private int REVEAL_X;
@@ -29,17 +29,17 @@ public abstract class CircularRevealDialog extends Dialog {
 
     private SupportAnimator mAnimator;
 
-    public CircularRevealDialog(final Context ctx, int theme) {
+    public CircularRevealDialog(final Context ctx, int theme, int layoutResId, RevealProperties revealProperties) {
         super(ctx, theme);
 
-        REVEAL_VIEW_RES_ID = getProperties().getViewResId();
-        REVEAL_X = getProperties().getX();
-        REVEAL_Y = getProperties().getY();
-        REVEAL_DURATION = getProperties().getDuration();
-        REVEAL_ANIMATE_EXIT = getProperties().isAnimateExit();
+        REVEAL_VIEW_RES_ID = revealProperties.getViewResId();
+        REVEAL_X = revealProperties.getX();
+        REVEAL_Y = revealProperties.getY();
+        REVEAL_DURATION = revealProperties.getDuration();
+        REVEAL_ANIMATE_EXIT = revealProperties.isAnimateExit();
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(getLayoutResId());
+        setContentView(layoutResId);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             findViewById(REVEAL_VIEW_RES_ID).addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
@@ -113,9 +113,5 @@ public abstract class CircularRevealDialog extends Dialog {
         } else
             CircularRevealDialog.super.dismiss();
     }
-
-    public abstract int getLayoutResId();
-
-    public abstract RevealProperties getProperties();
 
 }
