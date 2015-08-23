@@ -220,26 +220,22 @@ mView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
-        final CircularRevealDialog dialog = new CircularRevealDialog(MainActivity.this, R.style.DialogTheme) {
-            @Override
-            public int getLayoutResId() {
-                return R.layout.dialog_hello_world;
-            }
+        RevealProperties prop = new RevealProperties();
+        prop.setViewResId(R.id.layout);
+        prop.setX(x);
+        prop.setY(y);
+        prop.setDuration(500); // default value if not defined is 500
+        prop.setAnimateExit(true); //default value if not defined is false
 
-            @Override
-            public RevealProperties getProperties() {
-                RevealProperties prop = new RevealProperties();
-                prop.setViewResId(R.id.layout);
-                prop.setX(x);
-                prop.setY(y);
-                prop.setDuration(500); // default value if not defined is 500
-                prop.setAnimateExit(true); //default value if not defined is false
-                return prop;
-            }
-        };
+        final CircularRevealDialog dialog = new CircularRevealDialog(MainActivity2.this, R.style.DialogTheme, R.layout.dialog_hello_world, prop);
 
         Button button = (Button) dialog.findViewById(R.id.button);
-        // ...
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
 
         dialog.show();
     }
