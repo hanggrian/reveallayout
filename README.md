@@ -1,5 +1,5 @@
-CircularRevealActivity
-======================
+circular-reveal-activity-dialog
+===============================
 
 Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
