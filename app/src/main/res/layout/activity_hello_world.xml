@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hendraanggrian.circularrevealactivitysample.HelloWorldStaticActivity">
+    tools:context="com.hendraanggrian.circularrevealactivitydialogsample.activity.HelloWorldStaticActivity">
 
     <LinearLayout
         android:id="@+id/layout"
