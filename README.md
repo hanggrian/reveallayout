@@ -8,7 +8,7 @@ Activity and Dialog implementation of ozodrukh's wonderful <a href="https://gith
 Note
 ----
 
-This is my first release of my first GitHub contribution, all thanks to:
+This is my first GitHub contribution, all thanks to:
 - ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
 - Jake Wharton's <a href="https://github.com/JakeWharton/NineOldAndroids">NineOldAndroids<a/>
 
@@ -154,6 +154,102 @@ To animate the ActionBar, put toolbar view in your layout, then apply this styli
 <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <!-- your styling -->
 
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+</style>
+```
+
+Using CircularRevealDialog
+--------------------------
+
+Use `RevealFrameLayout` or `RevealLinearLayout` as root of your dialog layout
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <!-- content goes here -->
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="Hello World!"
+            android:textColor="@android:color/black"
+            android:textSize="32dp"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="DISMISS"/>
+
+    </LinearLayout>
+
+</io.codetail.widget.RevealFrameLayout>
+```
+
+Calling it
+
+```java
+int x = 0;
+int y = 0;
+
+// get the x and y point from OnTouchListener
+mView.setOnTouchListener(new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        x = (int) event.getRawX();
+        y = (int) event.getRawY();
+        return false;
+    }
+});
+
+// then use them as dialog starting point
+mView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        final CircularRevealDialog dialog = new CircularRevealDialog(MainActivity.this, R.style.DialogTheme) {
+            @Override
+            public int getLayoutResId() {
+                return R.layout.dialog_hello_world;
+            }
+
+            @Override
+            public RevealProperties getProperties() {
+                RevealProperties prop = new RevealProperties();
+                prop.setViewResId(R.id.layout);
+                prop.setX(x);
+                prop.setY(y);
+                prop.setDuration(500); // default value if not defined is 500
+                prop.setAnimateExit(true); //default value if not defined is false
+                return prop;
+            }
+        };
+
+        Button button = (Button) dialog.findViewById(R.id.button);
+        // ...
+
+        dialog.show();
+    }
+});
+```
+
+Don't forget to add this styling
+
+```xml
+<style name="DialogTheme" parent="Theme.AppCompat.Dialog">
     <item name="android:windowIsTranslucent">true</item>
     <item name="android:windowBackground">@android:color/transparent</item>
 </style>
