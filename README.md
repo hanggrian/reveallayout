@@ -1,11 +1,9 @@
 CircularRevealActivity
 ======================
 
-For dialog, check <a href="https://github.com/HendraAnggrian/CircularRevealDialog">CircularRevealDialog<a/>
+Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
-Activity implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
-
-<img src="http://i.imgur.com/JrUkWYe.gif" />
+<img src="http://i.imgur.com/JrUkWYe.gif" />   <img src="http://i.imgur.com/rnq0HOa.gif" />
 
 Note
 ----
@@ -24,14 +22,14 @@ Minimum SDK level of API 11 (3.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/CircularRevealActivity/blob/master/circularrevealactivity/release/circular-reveal-activity-0.2.jar?raw=true">circular-reveal-activity-0.2.jar<a/>
+The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/circular-reveal-activity-dialog/blob/master/circularrevealactivitydialog/release/circular-reveal-activity-dialog-0.3.jar?raw=true">circular-reveal-activity-dialog-0.3.jar<a/>
 
 or
 
-Download <a href="https://github.com/HendraAnggrian/CircularRevealActivity/tree/master/circularrevealactivity">library<a/> and import it in Project Structure as gradle project
+Download <a href="https://github.com/HendraAnggrian/CircularRevealActivity/tree/master/circularrevealactivitydialog">library<a/> and import it in Project Structure as gradle project
 
-Using
------
+Using CircularRevealActivity
+----------------------------
 
 Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
