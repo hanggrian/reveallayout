@@ -1,5 +1,5 @@
-PLEASE WAIT... UNDER HEAVY MAINTENANCE
-=======================
+PLEASE WAIT... v0.4 IS ON THE WAY
+=================================
 
 circular-reveal-activity-dialog
 ===============================
