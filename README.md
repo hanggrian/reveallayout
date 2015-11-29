@@ -1,5 +1,4 @@
-PLEASE WAIT ...
-UNDER HEAVY MAINTENANCE
+PLEASE WAIT... UNDER HEAVY MAINTENANCE
 =======================
 
 circular-reveal-activity-dialog
