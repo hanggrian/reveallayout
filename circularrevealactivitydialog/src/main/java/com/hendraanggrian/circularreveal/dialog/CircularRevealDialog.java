@@ -13,8 +13,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.hendraanggrian.circularreveal.RevealProperties;
 
-import io.codetail.animation.SupportAnimator;
-import io.codetail.animation.ViewAnimationUtils;
+import com.hendraanggrian.circularreveal.animation.SupportAnimator;
+import com.hendraanggrian.circularreveal.animation.ViewAnimationUtils;
 
 /**
  * Created by victorleonardo on 8/22/15.

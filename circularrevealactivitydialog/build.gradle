@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "21.0.2"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 13
         targetSdkVersion 21
     }
 
@@ -26,14 +26,14 @@ dependencies {
 
 // task to delete old jar
 task deleteOldJar(type: Delete) {
-    delete 'circular-reveal-activity-dialog-0.3.jar'
+    delete 'circular-reveal-activity-dialog.jar'
 }
 
 task exportJar(type: Copy) {
     from('build/intermediates/bundles/release/')
     into('release/')
     include('classes.jar')
-    rename('classes.jar', 'circular-reveal-activity-dialog-0.3.jar')
+    rename('classes.jar', 'circular-reveal-activity-dialog.jar')
 }
 
 exportJar.dependsOn(deleteOldJar, build)

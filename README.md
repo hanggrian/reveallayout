@@ -34,7 +34,7 @@ Using CircularRevealActivity
 Use `RevealFrameLayout` or `RevealLinearLayout` as root
 
 ```xml
-<io.codetail.widget.RevealFrameLayout
+<com.hendraanggrian.circularreveal.views.RevealFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -48,7 +48,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root
         
     <FrameLayout/>
 
-</io.codetail.widget.RevealFrameLayout>
+</com.hendraanggrian.circularreveal.views.RevealFrameLayout>
 ```
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
@@ -166,7 +166,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root of your dialog layout
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<io.codetail.widget.RevealFrameLayout
+<com.hendraanggrian.circularreveal.views.RevealFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -196,7 +196,7 @@ Use `RevealFrameLayout` or `RevealLinearLayout` as root of your dialog layout
 
     </LinearLayout>
 
-</io.codetail.widget.RevealFrameLayout>
+</com.hendraanggrian.circularreveal.views.RevealFrameLayout>
 ```
 
 Calling it

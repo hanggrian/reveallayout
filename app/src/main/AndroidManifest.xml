@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.hendraanggrian.circularrevealactivitydialogsample"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.hendraanggrian.circularrevealactivitydialogsample"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -8,7 +9,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.hendraanggrian.circularrevealactivitydialogsample.activity.MainActivity1"
+            android:name=".activity.MainActivity"
             android:label="CircularRevealActivity Sample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -17,23 +18,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.hendraanggrian.circularrevealactivitydialogsample.activity.HelloWorldStaticActivity"
+            android:name=".activity.HelloWorldActivity"
             android:label="Hello World!"
             android:theme="@style/CircularRevealTheme">
-        </activity>
-        <activity
-            android:name="com.hendraanggrian.circularrevealactivitydialogsample.activity.HelloWorldDynamicActivity"
-            android:label="Hello World!"
-            android:theme="@style/CircularRevealTheme">
-        </activity>
-        <activity
-            android:name="com.hendraanggrian.circularrevealactivitydialogsample.dialog.MainActivity2"
-            android:label="CircularRevealDialog Sample">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 
