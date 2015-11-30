@@ -1,12 +1,12 @@
 PLEASE WAIT... v0.4 IS ON THE WAY
 =================================
 
-circular-reveal-activity-dialog
-===============================
+CircularRevealLayout
+====================
 
 Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
-![alt tag](https://raw.github.com/hendraanggrian/CircularRevealLayout/master/CircularRevealLayout.gif)
+![CircularRevealLayout Sample](https://raw.github.com/hendraanggrian/CircularRevealLayout/master/CircularRevealLayout.gif)
 
 Note
 ----
