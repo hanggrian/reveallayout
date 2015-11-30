@@ -25,33 +25,52 @@ Minimum SDK level of API 11 (3.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/circular-reveal-activity-dialog/blob/master/circularrevealactivitydialog/release/circular-reveal-activity-dialog-0.3.jar?raw=true">circular-reveal-activity-dialog-0.3.jar<a/>
+The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/CircularRevealLayout/blob/master/circularreveallayout/release/circular-reveal-layout-0.4.1.jar?raw=true">circular-reveal-layout-0.4.1.jar<a/>
 
 or
 
-Download <a href="https://github.com/HendraAnggrian/CircularRevealActivity/tree/master/circularrevealactivitydialog">library<a/> and import it in Project Structure as gradle project
+Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/master/circularreveallayout">library<a/> and import it in Project Structure as gradle project
 
-Using CircularRevealActivity
-----------------------------
+Activity Usage
+--------------
 
-Use `RevealFrameLayout` or `RevealLinearLayout` as root
+Use `RevealParentLayout` or `RevealLinearLayout` as root
 
 ```xml
-<com.hendraanggrian.circularreveal.views.RevealFrameLayout
+<com.hendraanggrian.circularreveallayout.views.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
-    <FrameLayout
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        
-        <!-- content of activity should be here -->
-        
-    <FrameLayout/>
+    android:layout_height="match_parent"
+    tools:context=".activity.HelloWorldActivity">
 
-</com.hendraanggrian.circularreveal.views.RevealFrameLayout>
+    <com.hendraanggrian.circularreveallayout.views.RevealFrameLayout
+        android:id="@+id/revealLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:reveal_exit_duration="250"
+        app:reveal_open_duration="500">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?colorAccent"
+            android:elevation="8dp"
+            android:paddingLeft="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:gravity="center"
+            android:text="@string/hello_world"
+            android:textSize="32dp"/>
+    </com.hendraanggrian.circularreveallayout.views.RevealFrameLayout>
+
+</com.hendraanggrian.circularreveallayout.views.RevealParentLayout>
 ```
 
 Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
