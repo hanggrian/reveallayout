@@ -1,4 +1,4 @@
-<com.hendraanggrian.circularreveal.views.RevealParentLayout
+<com.hendraanggrian.circularreveallayout.views.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.HelloWorldActivity">
 
-    <com.hendraanggrian.circularreveal.views.RevealFrameLayout
+    <com.hendraanggrian.circularreveallayout.views.RevealFrameLayout
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,6 +29,6 @@
             android:gravity="center"
             android:text="@string/hello_world"
             android:textSize="32dp"/>
-    </com.hendraanggrian.circularreveal.views.RevealFrameLayout>
+    </com.hendraanggrian.circularreveallayout.views.RevealFrameLayout>
 
-</com.hendraanggrian.circularreveal.views.RevealParentLayout>
+</com.hendraanggrian.circularreveallayout.views.RevealParentLayout>

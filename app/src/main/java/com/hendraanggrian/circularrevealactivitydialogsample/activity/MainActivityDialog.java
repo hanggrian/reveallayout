@@ -11,7 +11,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.hendraanggrian.circularreveal.views.RevealLinearLayout;
+import com.hendraanggrian.circularreveallayout.views.RevealLinearLayout;
 import com.hendraanggrian.circularrevealactivitydialogsample.R;
 
 import butterknife.Bind;
@@ -73,7 +73,7 @@ public class MainActivityDialog extends Fragment {
                     }
                 };
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.test);
+                dialog.setContentView(R.layout.dialog_helloworld);
 
                 revealLayout = ButterKnife.findById(dialog, R.id.revealLayout);
                 revealLayout.setLocation(x, y);

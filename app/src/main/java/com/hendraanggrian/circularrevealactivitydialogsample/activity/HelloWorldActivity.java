@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.hendraanggrian.circularreveal.views.RevealFrameLayout;
+import com.hendraanggrian.circularreveallayout.views.RevealFrameLayout;
 import com.hendraanggrian.circularrevealactivitydialogsample.R;
 
 import butterknife.Bind;
@@ -25,7 +25,7 @@ public class HelloWorldActivity extends AppCompatActivity {
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("This is Test");
+        getSupportActionBar().setTitle("Hello World!");
     }
 
     @Override

@@ -1,1 +1,1 @@
-include ':app', ':circularrevealactivitydialog'
+include ':app', ':circularreveallayout'

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setTitle("Circular Reveal Activity & Dialog Sample");
+        getSupportActionBar().setTitle("CircularRevealLayout Sample");
 
         mViewPager.setAdapter(new CustomPagerAdapter(getSupportFragmentManager()));
     }
