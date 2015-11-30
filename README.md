@@ -6,7 +6,7 @@ circular-reveal-activity-dialog
 
 Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
-![alt tag](http://gph.is/1LIcdxq)
+<img src="http://gph.is/1LIcdxq" alt="CircularRevealLayout Sample">
 
 Note
 ----
