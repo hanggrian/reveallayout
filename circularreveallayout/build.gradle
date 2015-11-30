@@ -26,14 +26,14 @@ dependencies {
 
 // task to delete old jar
 task deleteOldJar(type: Delete) {
-    delete 'circular-reveal-activity-dialog.jar'
+    delete 'circular-reveal-layout.jar'
 }
 
 task exportJar(type: Copy) {
     from('build/intermediates/bundles/release/')
     into('release/')
     include('classes.jar')
-    rename('classes.jar', 'circular-reveal-activity-dialog.jar')
+    rename('classes.jar', 'circular-reveal-layout.jar')
 }
 
 exportJar.dependsOn(deleteOldJar, build)
