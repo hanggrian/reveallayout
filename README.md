@@ -108,10 +108,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
 
 @Override
 public void onBackPressed() {
-    if (getIntent().getExtras().getBoolean("EXTRA_ANIMATE_EXIT"))
-        revealLayout.animateExit(this);
-    else
-        super.onBackPressed();
+    revealLayout.animateExit(this);
 }
 ```
 
@@ -128,44 +125,35 @@ To animate the ActionBar, put toolbar view in your layout, then apply this styli
 </style>
 ```
 
-Using CircularRevealDialog
+Dialog Usage
 --------------------------
 
-Use `RevealFrameLayout` or `RevealLinearLayout` as root of your dialog layout
+Use `RevealParentLayout` as parent layout of your dialog.
+Inside, use either `RevealFrameLayout`, `RevealLinearLayout`, or `RevealRelativeLayout`.
+Inside, put the actual content.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.hendraanggrian.circularreveal.views.RevealFrameLayout
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="150dp">
 
-    <LinearLayout
-        android:id="@+id/layout"
+    <com.hendraanggrian.circularreveallayout.view.RevealLinearLayout
+        android:id="@+id/revealLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:reveal_exit_duration="250"
+        app:reveal_open_duration="500">
 
-        <!-- content goes here -->
+        ...
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:gravity="center"
-            android:text="Hello World!"
-            android:textColor="@android:color/black"
-            android:textSize="32dp"/>
+    </com.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:text="DISMISS"/>
-
-    </LinearLayout>
-
-</com.hendraanggrian.circularreveal.views.RevealFrameLayout>
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it
@@ -189,27 +177,30 @@ mView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setX(x);
-        prop.setY(y);
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); //default value if not defined is false
+        final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(...);
 
-        final CircularRevealDialog dialog = new CircularRevealDialog(MainActivity2.this, R.style.DialogTheme, R.layout.dialog_hello_world, prop);
-
-        Button button = (Button) dialog.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+        revealLayout = ButterKnife.findById(dialog, R.id.revealLayout);
+        revealLayout.setLocation(x, y);
+        revealLayout.isDialog();
 
         dialog.show();
     }
 });
 ```
+
+To animate on dialog exit, use override dialog `cancel()`
+
+```java
+final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme) {
+    @Override
+    public void cancel() {
+        revealLayout.animateExit(this);
+};
+```
+
+#####Styling
 
 Don't forget to add this styling
 
