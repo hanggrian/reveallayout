@@ -11,7 +11,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.hendraanggrian.circularreveallayout.views.RevealLinearLayout;
+import com.hendraanggrian.circularreveallayout.view.RevealLinearLayout;
 import com.hendraanggrian.circularrevealactivitydialogsample.R;
 
 import butterknife.Bind;

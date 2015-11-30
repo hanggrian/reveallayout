@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.hendraanggrian.circularreveallayout.views.RevealFrameLayout;
+import com.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
 import com.hendraanggrian.circularrevealactivitydialogsample.R;
 
 import butterknife.Bind;
