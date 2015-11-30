@@ -1,5 +1,3 @@
-PLEASE WAIT... v0.4 IS ON THE WAY
-=================================
 
 CircularRevealLayout
 ====================
@@ -25,7 +23,7 @@ Minimum SDK level of API 11 (3.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/CircularRevealLayout/blob/master/circularreveallayout/release/circular-reveal-layout-0.4.1.jar?raw=true">circular-reveal-layout-0.4.1.jar<a/>
+The easiest method is to import as jar <a href="https://github.com/HendraAnggrian/CircularRevealLayout/blob/master/circularreveallayout/release/circular-reveal-layout-v0.4.1.jar?raw=true">circular-reveal-layout-v0.4.1.jar<a/>
 
 or
 
@@ -34,18 +32,18 @@ Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/ma
 Activity Usage
 --------------
 
-Use `RevealParentLayout` or `RevealLinearLayout` as root
+Use `RevealParentLayout` as parent layout.
+Inside, use either `RevealFrameLayout`, `RevealLinearLayout`, or `RevealRelativeLayout`.
+Inside, put the actual content.
 
 ```xml
-<com.hendraanggrian.circularreveallayout.views.RevealParentLayout
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.HelloWorldActivity">
+    android:layout_height="match_parent">
 
-    <com.hendraanggrian.circularreveallayout.views.RevealFrameLayout
+    <com.hendraanggrian.circularreveallayout.view.RevealFrameLayout
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,97 +51,21 @@ Use `RevealParentLayout` or `RevealLinearLayout` as root
         app:reveal_exit_duration="250"
         app:reveal_open_duration="500">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?colorAccent"
-            android:elevation="8dp"
-            android:paddingLeft="16dp"/>
+        ...
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:gravity="center"
-            android:text="@string/hello_world"
-            android:textSize="32dp"/>
-    </com.hendraanggrian.circularreveallayout.views.RevealFrameLayout>
+    </com.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
 
-</com.hendraanggrian.circularreveallayout.views.RevealParentLayout>
-```
-
-Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
-
-#####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right
-
-```java
-public class MyActivity extends StaticCircularRevealActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // do not setContentView(...) here, instead put the layout res id below
-    }
-
-    @Override
-    protected int getLayoutResId() {
-        return R.layout.activity_layout;
-    }
-
-    @Override
-    protected RevealProperties getRevealProperties() {
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setGravity(getIntent().getExtras().getInt("EXTRA_GRAVITY"));
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); // default value if not defined is false
-        return prop;
-    }
-}
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it
 
 ```java
-Bundle bundle = new Bundle();
-bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP_LEFT);
-
-Intent intent = new Intent(context, MyActivity.class);
-intent.putExtras(bundle);
-startActivity(intent);
+RevealFrameLayout revealLayout = (RevealFrameLayout) findViewById(R.id.revealLayout);
+revealLayout.setLocation(X, Y);
 ```
 
-#####Dynamic starting points are defined by int X and Y point
-
-```java
-public class MyActivity extends DynamicCircularRevealActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // do not setContentView(...) here, instead put the layout res id below
-    }
-
-    @Override
-    protected int getLayoutResId() {
-        return R.layout.activity_layout;
-    }
-
-    @Override
-    protected RevealProperties getRevealProperties() {
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setX(getIntent().getExtras().getInt("EXTRA_X"));
-        prop.setY(getIntent().getExtras().getInt("EXTRA_Y"));
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); // default value if not defined is false
-        return prop;
-    }
-}
-```
-
-You can get these X and Y points from OnTouchListener
+You can get these X and Y points from `OnTouchListener` from previous activity
 
 ```java
 View mView = findViewById(R.id.view);
@@ -168,6 +90,26 @@ mView.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
+To trigger animation on exit, override `onOptionsItemSelected()` and `onBackPressed()`
+
+```java
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+        case android.R.id.home:
+            onBackPressed();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+}
+
+@Override
+public void onBackPressed() {
+    revealLayout.animateExit(this);
+}
+```
+
 #####Styling
 
 To animate the ActionBar, put toolbar view in your layout, then apply this styling
@@ -181,44 +123,35 @@ To animate the ActionBar, put toolbar view in your layout, then apply this styli
 </style>
 ```
 
-Using CircularRevealDialog
+Dialog Usage
 --------------------------
 
-Use `RevealFrameLayout` or `RevealLinearLayout` as root of your dialog layout
+Use `RevealParentLayout` as parent layout of your dialog.
+Inside, use either `RevealFrameLayout`, `RevealLinearLayout`, or `RevealRelativeLayout`.
+Inside, put the actual content.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.hendraanggrian.circularreveal.views.RevealFrameLayout
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="150dp">
 
-    <LinearLayout
-        android:id="@+id/layout"
+    <com.hendraanggrian.circularreveallayout.view.RevealLinearLayout
+        android:id="@+id/revealLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:reveal_exit_duration="250"
+        app:reveal_open_duration="500">
 
-        <!-- content goes here -->
+        ...
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:gravity="center"
-            android:text="Hello World!"
-            android:textColor="@android:color/black"
-            android:textSize="32dp"/>
+    </com.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:text="DISMISS"/>
-
-    </LinearLayout>
-
-</com.hendraanggrian.circularreveal.views.RevealFrameLayout>
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it
@@ -242,27 +175,30 @@ mView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setX(x);
-        prop.setY(y);
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); //default value if not defined is false
+        final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(...);
 
-        final CircularRevealDialog dialog = new CircularRevealDialog(MainActivity2.this, R.style.DialogTheme, R.layout.dialog_hello_world, prop);
-
-        Button button = (Button) dialog.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+        RevealLinearLayout revealLayout = (RevealLinearLayout) dialog.findViewById(R.id.revealLayout);
+        revealLayout.setLocation(x, y);
+        revealLayout.isDialog();
 
         dialog.show();
     }
 });
 ```
+
+To animate on dialog exit, use override dialog `cancel()`
+
+```java
+final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme) {
+    @Override
+    public void cancel() {
+        revealLayout.animateExit(this);
+};
+```
+
+#####Styling
 
 Don't forget to add this styling
 
