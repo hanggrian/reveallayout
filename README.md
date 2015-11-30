@@ -1,5 +1,3 @@
-PLEASE WAIT... v0.4 IS ON THE WAY
-=================================
 
 CircularRevealLayout
 ====================
@@ -181,7 +179,7 @@ mView.setOnClickListener(new View.OnClickListener() {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(...);
 
-        revealLayout = ButterKnife.findById(dialog, R.id.revealLayout);
+        RevealLinearLayout revealLayout = (RevealLinearLayout) dialog.findViewById(R.id.revealLayout);
         revealLayout.setLocation(x, y);
         revealLayout.isDialog();
 
