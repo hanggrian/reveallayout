@@ -34,18 +34,18 @@ Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/ma
 Activity Usage
 --------------
 
-Use `RevealParentLayout` or `RevealLinearLayout` as root
+Use `RevealParentLayout` as parent layout.
+Inside, use either `RevealFrameLayout`, `RevealLinearLayout`, or `RevealRelativeLayout`.
+Inside, put the actual content.
 
 ```xml
-<com.hendraanggrian.circularreveallayout.views.RevealParentLayout
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.HelloWorldActivity">
+    android:layout_height="match_parent">
 
-    <com.hendraanggrian.circularreveallayout.views.RevealFrameLayout
+    <com.hendraanggrian.circularreveallayout.view.RevealFrameLayout
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,97 +53,21 @@ Use `RevealParentLayout` or `RevealLinearLayout` as root
         app:reveal_exit_duration="250"
         app:reveal_open_duration="500">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?colorAccent"
-            android:elevation="8dp"
-            android:paddingLeft="16dp"/>
+        ...
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:gravity="center"
-            android:text="@string/hello_world"
-            android:textSize="32dp"/>
-    </com.hendraanggrian.circularreveallayout.views.RevealFrameLayout>
+    </com.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
 
-</com.hendraanggrian.circularreveallayout.views.RevealParentLayout>
-```
-
-Then you have 2 choices of layout reveal animation starting point: **Static** and **Dynamic**
-
-#####Static starting points are pre-defined into 9 possible points: Top Left, Top, Top Right, Center Left, Center, Center Right, Bottom Left, Bottom, Bottom Right
-
-```java
-public class MyActivity extends StaticCircularRevealActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // do not setContentView(...) here, instead put the layout res id below
-    }
-
-    @Override
-    protected int getLayoutResId() {
-        return R.layout.activity_layout;
-    }
-
-    @Override
-    protected RevealProperties getRevealProperties() {
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setGravity(getIntent().getExtras().getInt("EXTRA_GRAVITY"));
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); // default value if not defined is false
-        return prop;
-    }
-}
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it
 
 ```java
-Bundle bundle = new Bundle();
-bundle.putInt("EXTRA_GRAVITY", RevealGravity.TOP_LEFT);
-
-Intent intent = new Intent(context, MyActivity.class);
-intent.putExtras(bundle);
-startActivity(intent);
+RevealFrameLayout revealLayout = (RevealFrameLayout) findViewById(R.id.revealLayout);
+revealLayout.setLocation(X, Y);
 ```
 
-#####Dynamic starting points are defined by int X and Y point
-
-```java
-public class MyActivity extends DynamicCircularRevealActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // do not setContentView(...) here, instead put the layout res id below
-    }
-
-    @Override
-    protected int getLayoutResId() {
-        return R.layout.activity_layout;
-    }
-
-    @Override
-    protected RevealProperties getRevealProperties() {
-        RevealProperties prop = new RevealProperties();
-        prop.setViewResId(R.id.layout);
-        prop.setX(getIntent().getExtras().getInt("EXTRA_X"));
-        prop.setY(getIntent().getExtras().getInt("EXTRA_Y"));
-        prop.setDuration(500); // default value if not defined is 500
-        prop.setAnimateExit(true); // default value if not defined is false
-        return prop;
-    }
-}
-```
-
-You can get these X and Y points from OnTouchListener
+You can get these X and Y points from `OnTouchListener` from previous activity
 
 ```java
 View mView = findViewById(R.id.view);
@@ -166,6 +90,29 @@ mView.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
 });
+```
+
+To trigger animation on exit, override `onOptionsItemSelected()` and `onBackPressed()`
+
+```java
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+        case android.R.id.home:
+            onBackPressed();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+}
+
+@Override
+public void onBackPressed() {
+    if (getIntent().getExtras().getBoolean("EXTRA_ANIMATE_EXIT"))
+        revealLayout.animateExit(this);
+    else
+        super.onBackPressed();
+}
 ```
 
 #####Styling
