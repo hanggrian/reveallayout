@@ -14,9 +14,10 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.LinearLayout;
 
+import com.hendraanggrian.circularrevealactivitydialog.R;
+import com.hendraanggrian.circularreveallayout.Location;
 import com.hendraanggrian.circularreveallayout.animation.SupportAnimator;
 import com.hendraanggrian.circularreveallayout.animation.ViewAnimationUtils;
-import com.hendraanggrian.circularrevealactivitydialog.R;
 
 /**
  * Created by victorleonardo on 11/29/15.
@@ -48,6 +49,47 @@ public class RevealLinearLayout extends LinearLayout {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
         animateOpen(context);
+    }
+
+    public void setLocation(int location) {
+        switch (location) {
+            case Location.TOP_LEFT:
+                REVEAL_X = 0;
+                REVEAL_Y = 0;
+                break;
+            case Location.TOP_CENTER:
+                REVEAL_X = getWidth() / 2;
+                REVEAL_Y = 0;
+                break;
+            case Location.TOP_RIGHT:
+                REVEAL_X = getWidth();
+                REVEAL_Y = 0;
+                break;
+            case Location.CENTER_LEFT:
+                REVEAL_X = 0;
+                REVEAL_Y = getHeight() / 2;
+                break;
+            case Location.CENTER:
+                REVEAL_X = getWidth() / 2;
+                REVEAL_Y = getHeight() / 2;
+                break;
+            case Location.CENTER_RIGHT:
+                REVEAL_X = getWidth();
+                REVEAL_Y = getHeight() / 2;
+                break;
+            case Location.BOTTOM_LEFT:
+                REVEAL_X = 0;
+                REVEAL_Y = getHeight();
+                break;
+            case Location.BOTTOM_CENTER:
+                REVEAL_X = getWidth() / 2;
+                REVEAL_Y = getHeight();
+                break;
+            case Location.BOTTOM_RIGHT:
+                REVEAL_X = getWidth();
+                REVEAL_Y = getHeight();
+                break;
+        }
     }
 
     public void setLocation(int REVEAL_X, int REVEAL_Y) {
@@ -84,8 +126,8 @@ public class RevealLinearLayout extends LinearLayout {
 
                         Point size = new Point();
                         display.getSize(size);
-                        double xScalePoint = size.x / REVEAL_X;
-                        double yScalePoint = size.y / REVEAL_Y;
+                        int xScalePoint = size.x / REVEAL_X;
+                        int yScalePoint = size.y / REVEAL_Y;
 
                         // animate from custom coordinate
                         REVEAL_X = new Double((getLeft() + getRight()) / xScalePoint).intValue();
