@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.hendraanggrian.circularreveallayout.view.RevealLinearLayout
+        android:id="@+id/revealLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        app:reveal_exit_duration="250"
+        app:reveal_open_duration="500">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="Hello World!"
+            android:textColor="@android:color/black"
+            android:textSize="32dp"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="DISMISS"/>
+
+    </com.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
+
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>

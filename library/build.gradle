@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 13
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
+    compile 'com.nineoldandroids:library:2.4.0'
+}
+
+publish {
+    userOrg = 'hendraanggrian'
+    groupId = 'com.hendraanggrian.circularreveallayout'
+    artifactId = 'library'
+    publishVersion = '0.1.0'
+    desc = ''
+    website = 'https://github.com/hendraanggrian/circular-reveal-layout'
+
+    uploadName = 'circular-reveal-layout'
+}

@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/exploded-aar/circular-reveal-layout/library/unspecified/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-8714b69ffa366002707713769e1b679410d5dc2b.jar" />
+        revision="23.0.2"
+        sha1="5b252fc0f74581fcf8fd5fe1870d819655538798">
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/circular-reveal-layout-library-unspecified_2a3724964d02adf934053887484a68dc7430b030.jar" />
     </item>
     <item
-        jar="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/exploded-aar/CircularRevealLayout/circularreveallayout/unspecified/jars/classes.jar"
+        jar="/home/hendraanggrian/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="7d1eeaeabb92ab88a27e1ea65b0c37e464a239d7">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/classes-1937d7c7bc8fccfffa28d76ff9323577449b323a.jar" />
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_c50dfa3993e7a7b87e93979827408273d6c22ff6.jar" />
     </item>
     <item
-        jar="/Users/victorleonardo/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jar="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
         jumboMode="false"
-        revision="22.0.1"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_257ca331cd746a64f5db6b16e32d4107ad898a9d.jar" />
+    </item>
+    <item
+        jar="/home/hendraanggrian/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
         sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-c1667564dc2fe467f25f97272159a008f577d4e3.jar" />
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/butterknife-7.0.1_67db125cfaa91eef2c22ffb9f2b45f2f551fe947.jar" />
     </item>
     <item
-        jar="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/classes-dfbb0b0d38607198d4efd0eb2939a06f05dec454.jar" />
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_ab0442571b126a7df586bf22bc02b48befb0435f.jar" />
     </item>
     <item
-        jar="/Users/victorleonardo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/home/hendraanggrian/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-cca37b2e9c421ba2159e68c9118dfbe920d25ebc.jar" />
-    </item>
-    <item
-        jar="/Users/victorleonardo/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
+        revision="23.0.2"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/library-2.4.0-cddb50e72577cccc30246d5692e0315c41f00b40.jar" />
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/library-2.4.0_ac38fe1451b84513a99bcbe68abc855cbacac55b.jar" />
     </item>
     <item
-        jar="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/victorleonardo/GitHub/CircularRevealLayout/app/build/intermediates/pre-dexed/debug/classes-1050fb0bde67f879d5d7c434e250591eac1fdebe.jar" />
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/home/hendraanggrian/GitHub/circular-reveal-layout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_80a9742dde13c8e3cb98852079f90af75a930084.jar" />
     </item>
 
 </items>
