@@ -37,18 +37,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) return new FragmentActivity();
-            else return new FragmentDialog();
+            else if (position == 1) return new FragmentDialog();
+            else return new FragmentRecyclerView();
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             if (position == 0) return "Activity";
-            else return "Dialog";
+            else if (position == 1) return "Dialog";
+            else return "RecyclerView";
         }
     }
 }

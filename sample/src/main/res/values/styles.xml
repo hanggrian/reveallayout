@@ -13,6 +13,10 @@
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#004D40</item>
+        <item name="colorAccent">#CDDC39</item>
+
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>

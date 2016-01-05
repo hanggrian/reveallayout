@@ -111,7 +111,7 @@ public class RevealFrameLayout extends FrameLayout {
         typedArray.recycle();
     }
 
-    private void animateOpen(final Context context) {
+    public void animateOpen(final Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             addOnLayoutChangeListener(new OnLayoutChangeListener() {
                 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -147,7 +147,7 @@ public class RevealFrameLayout extends FrameLayout {
             });
     }
 
-    public void animateExit(final Activity mActivity) {
+    public void animateExit(final Activity activity) {
         if (!ANIMATOR.isRunning())
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 ANIMATOR = ANIMATOR.reverse();
@@ -163,7 +163,7 @@ public class RevealFrameLayout extends FrameLayout {
                     @Override
                     public void onAnimationEnd() {
                         setVisibility(View.GONE);
-                        mActivity.finish();
+                        activity.finish();
                     }
 
                     @Override
@@ -179,7 +179,7 @@ public class RevealFrameLayout extends FrameLayout {
             }
     }
 
-    public void animateExit(final Dialog mDialog) {
+    public void animateExit(final Dialog dialog) {
         if (!ANIMATOR.isRunning())
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 ANIMATOR = ANIMATOR.reverse();
@@ -195,7 +195,7 @@ public class RevealFrameLayout extends FrameLayout {
                     @Override
                     public void onAnimationEnd() {
                         setVisibility(View.GONE);
-                        mDialog.dismiss();
+                        dialog.dismiss();
                     }
 
                     @Override
@@ -208,6 +208,17 @@ public class RevealFrameLayout extends FrameLayout {
 
                     }
                 });
+            }
+    }
+
+    public void animateExit(SupportAnimator.AnimatorListener animatorListener) {
+        if (!ANIMATOR.isRunning())
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ANIMATOR = ANIMATOR.reverse();
+                ANIMATOR.setInterpolator(new AccelerateDecelerateInterpolator());
+                ANIMATOR.setDuration(REVEAL_EXIT_DURATION);
+                ANIMATOR.start();
+                ANIMATOR.addListener(animatorListener);
             }
     }
 }

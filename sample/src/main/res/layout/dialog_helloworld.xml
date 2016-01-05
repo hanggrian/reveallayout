@@ -9,7 +9,7 @@
         android:id="@+id/revealLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="?colorPrimary"
         android:orientation="vertical"
         app:reveal_exit_duration="250"
         app:reveal_open_duration="500">
@@ -19,14 +19,16 @@
             android:layout_height="150dp"
             android:gravity="center"
             android:text="Hello World!"
-            android:textColor="@android:color/black"
-            android:textSize="32dp"/>
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/button"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:text="DISMISS"/>
+            android:backgroundTint="?colorPrimaryDark"
+            android:text="DISMISS"
+            android:textColor="@android:color/white"/>
 
     </com.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
 
