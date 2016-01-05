@@ -23,11 +23,11 @@ Minimum SDK level of API 11 (3.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/master/circularreveallayout">library<a/> and import it in Project Structure as gradle project
+From gradle line `compile 'com.hendraanggrian.circularreveallayout:library:0.1.0'`
 
 or
 
-Gradle import coming soon...
+Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/master/circularreveallayout">library<a/> and import it in Project Structure as gradle project
 
 Activity Usage
 --------------
