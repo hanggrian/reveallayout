@@ -14,10 +14,10 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 
+import com.hendraanggrian.circularrevealactivitydialog.R;
 import com.hendraanggrian.circularreveallayout.Location;
 import com.hendraanggrian.circularreveallayout.animation.SupportAnimator;
 import com.hendraanggrian.circularreveallayout.animation.ViewAnimationUtils;
-import com.hendraanggrian.circularrevealactivitydialog.R;
 
 /**
  * Created by victorleonardo on 11/29/15.
@@ -31,6 +31,8 @@ public class RevealRelativeLayout extends RelativeLayout {
     private int REVEAL_X;
     private int REVEAL_Y;
     // from xml
+    private int REVEAL_LOCATION;
+    private final int REVEAL_LOCATION_DEFAULT = 0;
     private int REVEAL_EXIT_DURATION;
     private int REVEAL_OPEN_DURATION;
     private final int REVEAL_DURATION_DEFAULT = 500;
@@ -50,13 +52,14 @@ public class RevealRelativeLayout extends RelativeLayout {
         init(context, attrs);
         animateOpen(context);
     }
-    public void setLocation(int location) {
+
+    private void setLocation(final int location) {
         switch (location) {
             case Location.TOP_LEFT:
                 REVEAL_X = 0;
                 REVEAL_Y = 0;
                 break;
-            case Location.TOP_CENTER:
+            case Location.TOP:
                 REVEAL_X = getWidth() / 2;
                 REVEAL_Y = 0;
                 break;
@@ -64,7 +67,7 @@ public class RevealRelativeLayout extends RelativeLayout {
                 REVEAL_X = getWidth();
                 REVEAL_Y = 0;
                 break;
-            case Location.CENTER_LEFT:
+            case Location.LEFT:
                 REVEAL_X = 0;
                 REVEAL_Y = getHeight() / 2;
                 break;
@@ -72,7 +75,7 @@ public class RevealRelativeLayout extends RelativeLayout {
                 REVEAL_X = getWidth() / 2;
                 REVEAL_Y = getHeight() / 2;
                 break;
-            case Location.CENTER_RIGHT:
+            case Location.RIGHT:
                 REVEAL_X = getWidth();
                 REVEAL_Y = getHeight() / 2;
                 break;
@@ -80,7 +83,7 @@ public class RevealRelativeLayout extends RelativeLayout {
                 REVEAL_X = 0;
                 REVEAL_Y = getHeight();
                 break;
-            case Location.BOTTOM_CENTER:
+            case Location.BOTTOM:
                 REVEAL_X = getWidth() / 2;
                 REVEAL_Y = getHeight();
                 break;
@@ -101,9 +104,10 @@ public class RevealRelativeLayout extends RelativeLayout {
     }
 
     private void init(Context ctx, AttributeSet attrs) {
-        TypedArray typedArray = ctx.obtainStyledAttributes(attrs, R.styleable.CircularReveal);
-        REVEAL_EXIT_DURATION = typedArray.getInteger(R.styleable.CircularReveal_reveal_exit_duration, REVEAL_DURATION_DEFAULT);
-        REVEAL_OPEN_DURATION = typedArray.getInteger(R.styleable.CircularReveal_reveal_open_duration, REVEAL_DURATION_DEFAULT);
+        TypedArray typedArray = ctx.obtainStyledAttributes(attrs, R.styleable.CircularRevealLayout);
+        REVEAL_LOCATION = typedArray.getInteger(R.styleable.CircularRevealLayout_reveal_location, REVEAL_LOCATION_DEFAULT);
+        REVEAL_EXIT_DURATION = typedArray.getInteger(R.styleable.CircularRevealLayout_reveal_exit_duration, REVEAL_DURATION_DEFAULT);
+        REVEAL_OPEN_DURATION = typedArray.getInteger(R.styleable.CircularRevealLayout_reveal_open_duration, REVEAL_DURATION_DEFAULT);
         typedArray.recycle();
     }
 
@@ -116,7 +120,6 @@ public class RevealRelativeLayout extends RelativeLayout {
                     v.removeOnLayoutChangeListener(this);
 
                     if (isDialog) {
-
                         Display display = null;
                         if (context instanceof Activity)
                             display = ((Activity) context).getWindowManager().getDefaultDisplay();
@@ -133,10 +136,10 @@ public class RevealRelativeLayout extends RelativeLayout {
                         REVEAL_Y = new Double((getTop() + getBottom()) / yScalePoint).intValue();
                     }
 
-                    // get the final radius for the clipping circle
-                    int finalRadius = Math.max(getWidth(), getHeight());
+                    if (REVEAL_LOCATION != REVEAL_LOCATION_DEFAULT)
+                        setLocation(REVEAL_LOCATION);
 
-                    ANIMATOR = ViewAnimationUtils.createCircularReveal(RevealRelativeLayout.this, REVEAL_X, REVEAL_Y, 0, finalRadius);
+                    ANIMATOR = ViewAnimationUtils.createCircularReveal(RevealRelativeLayout.this, REVEAL_X, REVEAL_Y, 0, Math.max(getWidth(), getHeight()));
                     ANIMATOR.setInterpolator(new AccelerateDecelerateInterpolator());
                     ANIMATOR.setDuration(REVEAL_OPEN_DURATION);
                     ANIMATOR.start();
