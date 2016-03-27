@@ -25,8 +25,6 @@ Circular reveal animation as easy as:
 </com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
-Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
-
 ![CircularRevealLayout Sample](https://raw.github.com/hendraanggrian/CircularRevealLayout/master/CircularRevealLayout.gif)
 
 
@@ -45,11 +43,7 @@ Minimum SDK level of API 15 (4.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-From gradle line `'com.github.hendraanggrian:circular-reveal-layout:0.1.1'`
-
-or
-
-Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/master/circularreveallayout">library<a/> and import it in Project Structure as gradle project
+Gradle line `'com.github.hendraanggrian:circular-reveal-layout:0.1.1'`
 
 
 Activity Usage
