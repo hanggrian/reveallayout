@@ -16,5 +16,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        // CircularReval
+        maven {
+            url "https://jitpack.io"
+        }
     }
 }

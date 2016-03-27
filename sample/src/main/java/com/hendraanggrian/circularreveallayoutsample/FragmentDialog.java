@@ -44,25 +44,6 @@ public class FragmentDialog extends Fragment {
             @Override
             public void onClick(View view) {
 
-                /*RevealProperties prop = new RevealProperties();
-                prop.setViewResId(R.id.layout);
-                prop.setX(x);
-                prop.setY(y);
-                prop.setDuration(500); // default value if not defined is 500
-                prop.setAnimateExit(true); //default value if not defined is false
-
-                final CircularRevealDialog dialog = new CircularRevealDialog(rootView.getContext(), R.style.DialogTheme, R.layout.dialog_helloworld, prop);
-
-                Button button = (Button) dialog.findViewById(R.id.button);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();*/
-
                 final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme) {
                     @Override
                     public void cancel() {
@@ -76,8 +57,7 @@ public class FragmentDialog extends Fragment {
                 dialog.setContentView(R.layout.dialog_helloworld);
 
                 revealLayout = ButterKnife.findById(dialog, R.id.revealLayout);
-                revealLayout.setLocation(x, y);
-                revealLayout.isDialog();
+                revealLayout.setRevealLocation(x, y);
 
                 Button button = ButterKnife.findById(dialog, R.id.button);
                 button.setOnClickListener(new View.OnClickListener() {

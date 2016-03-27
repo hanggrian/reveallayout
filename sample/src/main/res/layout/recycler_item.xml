@@ -9,9 +9,9 @@
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:reveal_exit_duration="250"
-        app:reveal_location="bottom_right"
-        app:reveal_open_duration="500">
+        app:duration_exit="250"
+        app:duration_open="500"
+        app:location="bottom_right">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"

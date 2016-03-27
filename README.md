@@ -1,36 +1,56 @@
-
-Under Heavy Maintenance
-====================
-
 CircularRevealLayout
 ====================
+
+Circular reveal animation as easy as:
+
+```xml
+<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hendraanggrian.circularreveallayout.view.RevealFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:duration_exit="250"
+        app:duration_open="500"
+        app:location="bottom_right">
+
+        ...
+        
+    </com.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
+
+</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
+```
 
 Activity and Dialog implementation of ozodrukh's wonderful <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/> library
 
 ![CircularRevealLayout Sample](https://raw.github.com/hendraanggrian/CircularRevealLayout/master/CircularRevealLayout.gif)
 
-Note
-----
 
-This is my first GitHub contribution, all thanks to:
-- ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
-- Jake Wharton's <a href="https://github.com/JakeWharton/NineOldAndroids">NineOldAndroids<a/>
+Dependencies
+------------
 
-For any concern, please email me: hendraanggrian@gmail.com
+ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>
+
 
 Requirements
 ------------
 
-Minimum SDK level of API 11 (3.0+). However as of this writing, the animation will only occur on API 21 (5.0+). When implemented in API below 21, normal activity transition will occur.
+Minimum SDK level of API 15 (4.0+). However as of this writing, the animation will only occur on API 21 (5.0+). When implemented in API below 21, normal activity transition will occur.
+
 
 Importing
 ---------
 
-From gradle line `compile 'com.hendraanggrian.circularreveallayout:library:0.1.0'`
+From gradle line `'com.github.hendraanggrian:circular-reveal-layout:0.1.1'`
 
 or
 
 Download <a href="https://github.com/HendraAnggrian/CircularRevealLayout/tree/master/circularreveallayout">library<a/> and import it in Project Structure as gradle project
+
 
 Activity Usage
 --------------
@@ -50,9 +70,9 @@ Inside, put the actual content.
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
         app:reveal_exit_duration="250"
-        app:reveal_open_duration="500">
+        app:reveal_open_duration="500"
+        app:type="activity">
 
         ...
 
@@ -126,6 +146,7 @@ To animate the ActionBar, put toolbar view in your layout, then apply this styli
 </style>
 ```
 
+
 Dialog Usage
 --------------------------
 
@@ -145,10 +166,10 @@ Inside, put the actual content.
         android:id="@+id/revealLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
         android:orientation="vertical"
         app:reveal_exit_duration="250"
-        app:reveal_open_duration="500">
+        app:reveal_open_duration="500"
+        app:type="dialog">
 
         ...
 
@@ -179,12 +200,10 @@ mView.setOnClickListener(new View.OnClickListener() {
     public void onClick(View view) {
 
         final Dialog dialog = new Dialog(rootView.getContext(), R.style.DialogTheme);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(...);
 
         RevealLinearLayout revealLayout = (RevealLinearLayout) dialog.findViewById(R.id.revealLayout);
         revealLayout.setLocation(x, y);
-        revealLayout.isDialog();
 
         dialog.show();
     }
@@ -211,6 +230,7 @@ Don't forget to add this styling
     <item name="android:windowBackground">@android:color/transparent</item>
 </style>
 ```
+
 
 License
 --------

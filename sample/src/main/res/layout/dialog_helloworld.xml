@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:background="?colorPrimary"
         android:orientation="vertical"
-        app:reveal_exit_duration="250"
-        app:reveal_open_duration="500">
+        app:duration_exit="250"
+        app:duration_open="500"
+        app:type="dialog">
 
         <TextView
             android:layout_width="300dp"

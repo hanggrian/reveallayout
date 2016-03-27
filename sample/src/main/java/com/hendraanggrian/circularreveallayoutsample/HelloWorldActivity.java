@@ -21,7 +21,7 @@ public class HelloWorldActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         ButterKnife.bind(this);
 
-        revealLayout.setLocation(getIntent().getExtras().getInt("EXTRA_X"), getIntent().getExtras().getInt("EXTRA_Y"));
+        revealLayout.setRevealLocation(getIntent().getExtras().getInt("EXTRA_X"), getIntent().getExtras().getInt("EXTRA_Y"));
     }
 
     @Override

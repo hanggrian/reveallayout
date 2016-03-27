@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        minSdkVersion 13
+        minSdkVersion 15
         targetSdkVersion 23
     }
 
@@ -23,16 +23,20 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
 
-    compile 'com.nineoldandroids:library:2.4.0'
+    compile('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
+        transitive = true;
+    }
 }
 
 publish {
     userOrg = 'hendraanggrian'
-    groupId = 'com.hendraanggrian.circularreveallayout'
-    artifactId = 'library'
-    publishVersion = '0.1.0'
-    desc = ''
+    groupId = 'com.github.hendraanggrian'
+    artifactId = 'circular-reveal-layout'
+    publishVersion = '0.1.1'
+    desc = 'Easy Lollipop Circular Reveal Animation'
     website = 'https://github.com/hendraanggrian/circular-reveal-layout'
 
     uploadName = 'circular-reveal-layout'
 }
+
+//$ ./gradlew clean build bintrayUpload -PbintrayUser=hendraanggrian -PbintrayKey=BINTRAY_KEY -PdryRun=false

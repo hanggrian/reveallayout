@@ -11,15 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?colorPrimary"
-        app:reveal_exit_duration="250"
-        app:reveal_open_duration="500">
+        app:duration_exit="250"
+        app:duration_open="500"
+        app:type="activity">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:elevation="0dp"
-            android:paddingLeft="16dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:navigationIcon="?attr/homeAsUpIndicator"
             app:title="Hello World!"/>

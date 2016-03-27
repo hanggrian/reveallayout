@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.hendraanggrian.circularreveallayout.animation.SupportAnimator;
 import com.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
 
 import java.util.ArrayList;
@@ -15,6 +14,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.codetail.animation.SupportAnimator;
 
 /**
  * Created by hendraanggrian on 06/01/16.
@@ -62,7 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
         });
 
-        holder.button2.setOnClickListener(new View.OnClickListener() {
+        /*holder.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 holder.revealFrameLayout.animateExit(new SupportAnimator.AnimatorListener() {
@@ -84,7 +84,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     }
                 });
             }
-        });
+        });*/
     }
 
     public void add(String item) {

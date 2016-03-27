@@ -8,9 +8,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.hendraanggrian.circularreveallayout.animation.RevealAnimator;
-import com.hendraanggrian.circularreveallayout.animation.SupportAnimator;
-import com.hendraanggrian.circularreveallayout.animation.ViewAnimationUtils;
+import io.codetail.animation.RevealAnimator;
+import io.codetail.animation.SupportAnimator;
+import io.codetail.animation.ViewAnimationUtils;
+
 
 public class RevealParentLayout extends FrameLayout implements RevealAnimator {
 
