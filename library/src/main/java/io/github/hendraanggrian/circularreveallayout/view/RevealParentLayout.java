@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayout.view;
+package io.github.hendraanggrian.circularreveallayout.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

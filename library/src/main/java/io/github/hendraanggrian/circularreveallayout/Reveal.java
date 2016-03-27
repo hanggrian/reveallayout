@@ -1,10 +1,10 @@
-package com.hendraanggrian.circularreveallayout;
+package io.github.hendraanggrian.circularreveallayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-import com.hendraanggrian.circularrevealactivitydialog.R;
+import io.github.hendraanggrian.circularrevealactivitydialog.R;
 
 import io.codetail.animation.SupportAnimator;
 

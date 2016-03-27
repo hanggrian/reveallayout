@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayoutsample;
+package io.github.hendraanggrian.circularreveallayoutsample;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 
-import com.hendraanggrian.circularreveallayout.view.RevealLinearLayout;
+import io.github.hendraanggrian.circularreveallayout.view.RevealLinearLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

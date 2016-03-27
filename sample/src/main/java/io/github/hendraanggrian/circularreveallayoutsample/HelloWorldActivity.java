@@ -1,11 +1,11 @@
-package com.hendraanggrian.circularreveallayoutsample;
+package io.github.hendraanggrian.circularreveallayoutsample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
+import io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

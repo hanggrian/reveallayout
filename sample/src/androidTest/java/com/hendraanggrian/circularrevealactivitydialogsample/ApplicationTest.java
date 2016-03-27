@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularrevealactivitydialogsample;
+package io.github.hendraanggrian.circularrevealactivitydialogsample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

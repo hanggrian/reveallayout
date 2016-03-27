@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayout.view;
+package io.github.hendraanggrian.circularreveallayout.view;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 
-import com.hendraanggrian.circularreveallayout.Reveal;
-import com.hendraanggrian.circularreveallayout.RevealCallback;
+import io.github.hendraanggrian.circularreveallayout.Reveal;
+import io.github.hendraanggrian.circularreveallayout.RevealCallback;
 
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;

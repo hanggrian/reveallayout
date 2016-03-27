@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayoutsample;
+package io.github.hendraanggrian.circularreveallayoutsample;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;

@@ -19,10 +19,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:recyclerview-v7:23.2.1'
-
     compile('com.github.ozodrukh:CircularReveal:1.3.1@aar') {
         transitive = true;
     }
@@ -30,9 +26,9 @@ dependencies {
 
 publish {
     userOrg = 'hendraanggrian'
-    groupId = 'com.github.hendraanggrian'
+    groupId = 'io.github.hendraanggrian'
     artifactId = 'circular-reveal-layout'
-    publishVersion = '0.1.1'
+    publishVersion = '0.1.2'
     desc = 'Easy Lollipop Circular Reveal Animation'
     website = 'https://github.com/hendraanggrian/circular-reveal-layout'
 

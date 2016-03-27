@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayout;
+package io.github.hendraanggrian.circularreveallayout;
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)

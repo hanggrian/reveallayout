@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayout;
+package io.github.hendraanggrian.circularreveallayout;
 
 import android.app.Activity;
 import android.app.Dialog;

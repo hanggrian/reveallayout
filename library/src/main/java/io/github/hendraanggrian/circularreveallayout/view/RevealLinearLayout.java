@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayout.view;
+package io.github.hendraanggrian.circularreveallayout.view;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -11,10 +11,10 @@ import android.util.AttributeSet;
 import android.view.Display;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-import com.hendraanggrian.circularreveallayout.Reveal;
-import com.hendraanggrian.circularreveallayout.RevealCallback;
+import io.github.hendraanggrian.circularreveallayout.Reveal;
+import io.github.hendraanggrian.circularreveallayout.RevealCallback;
 
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
@@ -22,21 +22,21 @@ import io.codetail.animation.ViewAnimationUtils;
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public class RevealFrameLayout extends FrameLayout implements RevealCallback {
+public class RevealLinearLayout extends LinearLayout implements RevealCallback {
 
     private Reveal reveal;
 
-    public RevealFrameLayout(Context context) {
+    public RevealLinearLayout(Context context) {
         super(context);
     }
 
-    public RevealFrameLayout(Context context, AttributeSet attrs) {
+    public RevealLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.reveal = new Reveal(context, attrs, getWidth(), getHeight());
         animateOpen(context);
     }
 
-    public RevealFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RevealLinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.reveal = new Reveal(context, attrs, getWidth(), getHeight());
         animateOpen(context);
@@ -68,7 +68,7 @@ public class RevealFrameLayout extends FrameLayout implements RevealCallback {
                         reveal.setY(new Double((getTop() + getBottom()) / yScalePoint).intValue());
                     }
 
-                    reveal.setAnimator(ViewAnimationUtils.createCircularReveal(RevealFrameLayout.this, reveal.getX(), reveal.getY(), 0, Math.max(getWidth(), getHeight())));
+                    reveal.setAnimator(ViewAnimationUtils.createCircularReveal(RevealLinearLayout.this, reveal.getX(), reveal.getY(), 0, Math.max(getWidth(), getHeight())));
                     reveal.getAnimator().setInterpolator(new AccelerateDecelerateInterpolator());
                     reveal.getAnimator().setDuration(reveal.getDurationOpen());
                     reveal.getAnimator().start();

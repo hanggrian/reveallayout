@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayoutsample;
+package io.github.hendraanggrian.circularreveallayoutsample;
 
 import android.content.Intent;
 import android.os.Bundle;

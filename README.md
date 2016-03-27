@@ -4,14 +4,14 @@ CircularRevealLayout
 Circular reveal animation as easy as:
 
 ```xml
-<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
+<io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hendraanggrian.circularreveallayout.view.RevealFrameLayout
+    <io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:duration_exit="250"
@@ -20,9 +20,9 @@ Circular reveal animation as easy as:
 
         ...
         
-    </com.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
+    </io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
 
-</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
+</io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 ![CircularRevealLayout Sample](https://raw.github.com/hendraanggrian/CircularRevealLayout/master/CircularRevealLayout.gif)
@@ -43,7 +43,7 @@ Minimum SDK level of API 15 (4.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-Gradle line `'com.github.hendraanggrian:circular-reveal-layout:0.1.1'`
+Gradle line `'io.github.hendraanggrian:circular-reveal-layout:0.1.2'`
 
 
 Activity Usage
@@ -54,13 +54,13 @@ Inside, use either `RevealFrameLayout`, `RevealLinearLayout`, or `RevealRelative
 Inside, put the actual content.
 
 ```xml
-<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
+<io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hendraanggrian.circularreveallayout.view.RevealFrameLayout
+    <io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout
         android:id="@+id/revealLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,9 +70,9 @@ Inside, put the actual content.
 
         ...
 
-    </com.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
+    </io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout>
 
-</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
+</io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it
@@ -150,13 +150,13 @@ Inside, put the actual content.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<com.hendraanggrian.circularreveallayout.view.RevealParentLayout
+<io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="300dp"
     android:layout_height="150dp">
 
-    <com.hendraanggrian.circularreveallayout.view.RevealLinearLayout
+    <io.github.hendraanggrian.circularreveallayout.view.RevealLinearLayout
         android:id="@+id/revealLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -167,9 +167,9 @@ Inside, put the actual content.
 
         ...
 
-    </com.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
+    </io.github.hendraanggrian.circularreveallayout.view.RevealLinearLayout>
 
-</com.hendraanggrian.circularreveallayout.view.RevealParentLayout>
+</io.github.hendraanggrian.circularreveallayout.view.RevealParentLayout>
 ```
 
 Calling it

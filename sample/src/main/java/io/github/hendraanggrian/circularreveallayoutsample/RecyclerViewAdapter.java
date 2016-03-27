@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveallayoutsample;
+package io.github.hendraanggrian.circularreveallayoutsample;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
+import io.github.hendraanggrian.circularreveallayout.view.RevealFrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
