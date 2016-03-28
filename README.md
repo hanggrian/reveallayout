@@ -43,7 +43,7 @@ Minimum SDK level of API 15 (4.0+). However as of this writing, the animation wi
 Importing
 ---------
 
-Gradle line `'io.github.hendraanggrian:circular-reveal-layout:0.1.2'`
+Gradle line `'io.github.hendraanggrian:circular-reveal-layout:0.1.3'`
 
 
 Activity Usage

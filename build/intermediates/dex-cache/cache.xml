@@ -9,6 +9,13 @@
         <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_1dab379ceece739fe7311f368a8438fbe920e3ba.jar" />
     </item>
     <item
+        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/CircularRevealLayout/library/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9d2cdc913c1b472bc33295b4fb8408fda930396d">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/CircularRevealLayout-library-unspecified_092f24cf213a68e511518a30f91957a05fd70333.jar" />
+    </item>
+    <item
         jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -30,6 +37,13 @@
         <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.1_d633bb1c08a27d996801e07bcc6bda2e93f02cc4.jar" />
     </item>
     <item
+        jar="/Users/hendraanggrian/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/butterknife-7.0.1_e4da8b87d99eb0ba96951558ad0fc150a29d3167.jar" />
+    </item>
+    <item
         jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.3.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -37,25 +51,11 @@
         <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.github.ozodrukh-CircularReveal-1.3.1_9d5a51d4e17ed5a66953d0a7a59f4bf51d8b9284.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_4b82555ab13370a0b75b31131641b1883f96eaed.jar" />
-    </item>
-    <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.2.1_6ab1c48f0a0719f6d184da81c19b50cb99d30dc0.jar" />
-    </item>
-    <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.1_4c45e0faf985ced29045502813c04a834764c580.jar" />
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.1_a8a541370d14e1ede95cfe7bd0eb51fce9fadccd.jar" />
     </item>
     <item
         jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
@@ -65,25 +65,25 @@
         <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_6efe8aa0baae7ae3faebcfe7976d16ff253dbc8d.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/butterknife-7.0.1_e4da8b87d99eb0ba96951558ad0fc150a29d3167.jar" />
+        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.2.1_6ab1c48f0a0719f6d184da81c19b50cb99d30dc0.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/CircularRevealLayout/library/unspecified/jars/classes.jar"
+        jar="/Users/hendraanggrian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="9c96ea76518154ad568de7a8fe81afbc4ae5c5e6">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/CircularRevealLayout-library-unspecified_092f24cf213a68e511518a30f91957a05fd70333.jar" />
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_4b82555ab13370a0b75b31131641b1883f96eaed.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.1_a8a541370d14e1ede95cfe7bd0eb51fce9fadccd.jar" />
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.1_4c45e0faf985ced29045502813c04a834764c580.jar" />
     </item>
 
 </items>
