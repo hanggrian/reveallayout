@@ -9,7 +9,7 @@ Gradle line `compile 'io.github.hendraanggrian:circularrevealanimator:0.1.4'`
 Simple
 ------
 
-![Sample 1](https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample1.gif)
+<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample1.gif" width="256">
 
 ```xml
 <io.codetail.widget.RevealFrameLayout
@@ -32,7 +32,7 @@ CircularRevealAnimation.of(context).reveal(R.id.target, startX, startY);
 With curve animation
 --------------------
 
-![Sample 2](https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample2.gif)
+<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample2.gif" width="256">
 
 ```xml
 <io.codetail.widget.RevealFrameLayout
@@ -60,7 +60,7 @@ CircularRevealAnimation.of(context).reveal(R.id.source, R.id.target);
 Activity transition
 -------------------
 
-![Sample 3](https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample3.gif)
+<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/artwork/sample3.gif" width="256">
 
 ```java
 // from previous activity
