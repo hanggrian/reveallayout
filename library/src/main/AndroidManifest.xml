@@ -1,6 +1,1 @@
-<manifest
-    package="io.github.hendraanggrian.circularrevealactivitydialog">
-
-    <application/>
-
-</manifest>
+<manifest package="io.github.hendraanggrian.library"/>

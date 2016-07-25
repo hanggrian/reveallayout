@@ -2,20 +2,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#009688</item>
-        <item name="colorPrimaryDark">#004D40</item>
-        <item name="colorAccent">#CDDC39</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="CircularRevealTheme" parent="AppTheme">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
-
-    <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
-        <item name="colorPrimary">#009688</item>
-        <item name="colorPrimaryDark">#004D40</item>
-        <item name="colorAccent">#CDDC39</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
 
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>

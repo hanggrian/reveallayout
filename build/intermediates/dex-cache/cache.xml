@@ -2,88 +2,102 @@
 <items version="2" >
 
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_1dab379ceece739fe7311f368a8438fbe920e3ba.jar" />
+        revision="24.0.0"
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.1.1_0ca3a705199f73a7afa6f1d0dbc882653e7d227c.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/CircularRevealLayout/library/unspecified/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="9d2cdc913c1b472bc33295b4fb8408fda930396d">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/CircularRevealLayout-library-unspecified_092f24cf213a68e511518a30f91957a05fd70333.jar" />
+        revision="24.0.0"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.1_08305a992a853beb65e84b6d8f9f836b8ef3b252.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.1_ba2cbdadaa0d2da0b88fcc87bbe8e5cc68a35496.jar" />
+        revision="24.0.0"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.1_6361b7c8c0b42ecfc4844ff1ca9877a83a279f5b.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.0.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.1_6363654daa0c91e258670f432cf132fbf519b0c7.jar" />
+        revision="24.0.0"
+        sha1="74ca46e7da11e3d065eb64cdbe6568a7ed74c211">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.jakewharton-butterknife-8.0.1_ef52ff502c26c1842ddf5ad9d15a1534022170a4.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.1_d633bb1c08a27d996801e07bcc6bda2e93f02cc4.jar" />
+        revision="24.0.0"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.1_11321f26aed42d96398758d8257d6c010b1f848d.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jar="C:\Users\Hendra Anggrian\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/butterknife-7.0.1_e4da8b87d99eb0ba96951558ad0fc150a29d3167.jar" />
+        revision="24.0.0"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_5f07af8d3a28d41d6b1cbe48b7f1e05e6ce7c8bc.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.github.ozodrukh/CircularReveal/1.3.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\CircularRevealAnimator\library\unspecified\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="4e01297e21f918ce3de5f20f1b7ab5682f125ff4">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.github.ozodrukh-CircularReveal-1.3.1_9d5a51d4e17ed5a66953d0a7a59f4bf51d8b9284.jar" />
+        revision="24.0.0"
+        sha1="f1b6bc1cf1a4d719df3787cad8ccd74ef33db91a">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\CircularRevealAnimator-library-unspecified_ed49b96b6966aa3cd2d6ca9895087e55cf260bb5.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.1_a8a541370d14e1ede95cfe7bd0eb51fce9fadccd.jar" />
+        revision="24.0.0"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_6833e2dc223e3c0c3cddd5c91f8dd26903e9606f.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_6efe8aa0baae7ae3faebcfe7976d16ff253dbc8d.jar" />
+        revision="24.0.0"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.1_40b97f6c6a7714c5b6d923dd753619a0d4a8909c.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="cb86970df0f0f25f766d320b279c7858c1ca0003">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.2.1_6ab1c48f0a0719f6d184da81c19b50cb99d30dc0.jar" />
+        revision="24.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\picasso-2.5.2_6b8f8265ca296f9dda590df415fc7726701d64b8.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jar="C:\Users\Hendra Anggrian\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.0.1\345b89f45d02d8b09400b472fab7b7e38f4ede1f\butterknife-annotations-8.0.1.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_4b82555ab13370a0b75b31131641b1883f96eaed.jar" />
+        revision="24.0.0"
+        sha1="345b89f45d02d8b09400b472fab7b7e38f4ede1f">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\butterknife-annotations-8.0.1_aa69f2e89091dd949e6c4b02c68e2719035a7b67.jar" />
     </item>
     <item
-        jar="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="/Users/hendraanggrian/GitHub/CircularRevealLayout/sample/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.1_4c45e0faf985ced29045502813c04a834764c580.jar" />
+        revision="24.0.0"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_59e3305b38dfb2b8417ef1ef40de6daa9e7482a9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.android.support\design\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.android.support-design-24.1.1_96854e678ba23ad37e667a61975f396d82d0f198.jar" />
+    </item>
+    <item
+        jar="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\exploded-aar\com.github.ozodrukh\CircularReveal\2.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="0ea06f21732a3f11bac13796ada56f100d1dd650">
+        <dex dex="C:\Users\Hendra Anggrian\GitHub\CircularRevealAnimator\sample\build\intermediates\pre-dexed\debug\com.github.ozodrukh-CircularReveal-2.0.1_eb7664a78dd45c2c4515291651f53865d210f92c.jar" />
     </item>
 
 </items>
