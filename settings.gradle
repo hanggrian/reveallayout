@@ -1,1 +1,2 @@
-include ':library', ':sample'
+include ':circular-reveal'
+include ':circular-reveal-demo'

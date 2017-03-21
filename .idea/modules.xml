@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CircularRevealAnimator.iml" filepath="$PROJECT_DIR$/CircularRevealAnimator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circular-reveal.iml" filepath="$PROJECT_DIR$/circular-reveal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circular-reveal/circular-reveal-circular-reveal.iml" filepath="$PROJECT_DIR$/circular-reveal/circular-reveal-circular-reveal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circular-reveal-demo/circular-reveal-demo.iml" filepath="$PROJECT_DIR$/circular-reveal-demo/circular-reveal-demo.iml" />
     </modules>
   </component>
 </project>

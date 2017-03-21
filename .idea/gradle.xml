@@ -8,17 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/library" />
-            <option value="$PROJECT_DIR$/sample" />
+            <option value="$PROJECT_DIR$/circular-reveal" />
+            <option value="$PROJECT_DIR$/circular-reveal-demo" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/library" />
-            <option value="$PROJECT_DIR$/sample" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

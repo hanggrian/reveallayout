@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.hendraanggrian.circularrevealdemo.TestActivity">
+
+    <FrameLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <FrameLayout
+            android:id="@+id/view"
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginRight="48dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="48dp"
+                android:background="#0097A7"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginLeft="96dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginTop="88dp"
+                android:background="#00ACC1"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginTop="112dp"
+                android:background="#4DD0E1"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginRight="28dp"
+                app:backgroundTint="#80DEEA"
+                app:elevation="0dp"
+                app:fabSize="mini"/>
+        </FrameLayout>
+    </FrameLayout>
+
+</io.codetail.widget.RevealFrameLayout>
