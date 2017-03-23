@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.codetail.animation.ViewAnimationUtils;
+import io.github.hendraanggrian.circularreveal.internal.AnimatorPath;
+import io.github.hendraanggrian.circularreveal.internal.PathEvaluator;
+import io.github.hendraanggrian.circularreveal.internal.PathPoint;
 
 /**
  * Created by hendraanggrian on 25-Jul-16.

@@ -1,8 +1,10 @@
 package io.github.hendraanggrian.circularrevealdemo;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,8 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.hendraanggrian.circularreveal.CircularReveal;
 import io.github.hendraanggrian.circularreveal.CircularRevealAnimator;
-import io.github.hendraanggrian.circularreveal.PathPoint;
-import io.github.hendraanggrian.circularreveal.Reversible;
+import io.github.hendraanggrian.circularreveal.internal.PathPoint;
 
 public class MainActivity extends AppCompatActivity implements CircularRevealAnimator.OnReveal, View.OnClickListener {
 
@@ -22,8 +23,6 @@ public class MainActivity extends AppCompatActivity implements CircularRevealAni
 
     @BindView(R.id.maskSimple) View maskSimple;
     @BindView(R.id.maskTo) View maskTo;
-
-    private Reversible reversible;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,31 +47,51 @@ public class MainActivity extends AppCompatActivity implements CircularRevealAni
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonSimple:
-                reversible = CircularReveal.with(maskSimple)
-                        .onStart(new CircularReveal.OnStart() {
-                            @Override
-                            public void onStart(@NonNull View view) {
-                                view.setVisibility(View.VISIBLE);
-                            }
-                        })
-                        .reveal();
+                Animator animator1 = CircularReveal.create(maskSimple);
+                animator1.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        maskSimple.setVisibility(View.VISIBLE);
+                    }
+                });
+                animator1.start();
                 break;
             case R.id.maskSimple:
-                reversible.onEnd(new CircularReveal.OnEnd() {
+                Animator animator2 = CircularReveal.create(maskSimple, true);
+                animator2.addListener(new AnimatorListenerAdapter() {
                     @Override
-                    public void onEnd(@NonNull View view) {
-                        view.setVisibility(View.GONE);
+                    public void onAnimationEnd(Animator animation) {
+                        maskSimple.setVisibility(View.INVISIBLE);
                     }
-                }).reverse();
+                });
+                animator2.start();
                 break;
             case R.id.buttonFrom:
-                CircularRevealAnimator.of(this).reveal(buttonFrom, maskTo);
+                AnimatorSet animatorSet1 = CircularReveal.createSet(this, buttonFrom, maskTo);
+                animatorSet1.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        buttonFrom.setVisibility(View.INVISIBLE);
+                        maskTo.setVisibility(View.VISIBLE);
+                    }
+                });
+                animatorSet1.start();
                 break;
             case R.id.maskTo:
-                CircularRevealAnimator.of(this).reverse(buttonFrom, maskTo);
+                AnimatorSet animatorSet2 = CircularReveal.createSet(this, buttonFrom, maskTo, true);
+                animatorSet2.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        buttonFrom.setVisibility(View.VISIBLE);
+                        maskTo.setVisibility(View.INVISIBLE);
+                    }
+                });
+                animatorSet2.start();
                 break;
             case R.id.buttonFull:
-                CircularRevealAnimator.of(this).startActivity(new Intent(this, TestActivity.class), buttonFull);
+                Intent intent = new Intent(this, TestActivity.class);
+                Intent wrappedIntent = CircularReveal.createIntent(buttonFull, intent);
+                startActivity(wrappedIntent);
                 break;
         }
     }

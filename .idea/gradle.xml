@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/circular-reveal" />
-            <option value="$PROJECT_DIR$/circular-reveal-demo" />
+            <option value="$PROJECT_DIR$/circular-reveal-extensions" />
+            <option value="$PROJECT_DIR$/circular-reveal-extensions-demo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
