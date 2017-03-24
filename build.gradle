@@ -46,10 +46,10 @@ ext.deps = [
 ext.bintray = [
         user    : 'hendraanggrian',
         group   : 'io.github.hendraanggrian',
-        artifact: 'circular-reveal-extension',
+        artifact: 'circular-reveal-extensions',
         version : '0.2.0',
         desc    : 'Circular reveal animation for even lazier programmers.',
-        website : 'https://github.com/hendraanggrian/circular-reveal-extension'
+        website : 'https://github.com/hendraanggrian/circular-reveal-extensions'
 ]
 
 //$ ./gradlew bintrayUpload -PbintrayUser=hendraanggrian -PbintrayKey= -PdryRun=false
