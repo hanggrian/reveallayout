@@ -1,21 +1,44 @@
 package io.github.hendraanggrian.circularrevealdemo;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
 
-import io.github.hendraanggrian.circularreveal.CircularRevealAnimator;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import io.github.hendraanggrian.circularreveal.CircularReveal;
 
 public class TestActivity extends AppCompatActivity {
+
+    @BindView(R.id.layout) ViewGroup layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        CircularRevealAnimator.of(this).onCreate(R.id.layout);
+        ButterKnife.bind(this);
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+                CircularReveal.createFromIntent(getIntent(), layout).start();
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-        CircularRevealAnimator.of(this).onBackPressed(R.id.layout);
+        Animator animator = CircularReveal.createFromIntent(getIntent(), layout, true);
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                layout.setVisibility(View.INVISIBLE);
+                finish();
+                overridePendingTransition(0, 0);
+            }
+        });
+        animator.start();
     }
 }
