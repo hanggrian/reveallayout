@@ -12,7 +12,7 @@ compile 'com.hendraanggrian:reveal-layout:0.3.1'
 
 Simple
 ------
-<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo1.gif" width="256">
+<img src="https://raw.githubusercontent.com/HendraAnggrian/reveallayout/master/art/demo1.gif" width="256">
 
 Simply add target reveal id attribute in `RevealFrameLayout` or `RevealLinearLayout`.
 ```xml
@@ -42,7 +42,7 @@ animator.start();
 
 With path animation
 -------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo2.gif" width="256">
+<img src="https://raw.githubusercontent.com/hendraanggrian/reveallayout/master/art/demo2.gif" width="256">
 
 ```xml
 <com.hendraanggrian.reveallayout.RevealFrameLayout
@@ -73,6 +73,6 @@ set.start();
 
 Activity transition
 -------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo3.gif" width="256">
+<img src="https://raw.githubusercontent.com/hendraanggrian/reveallayout/master/art/demo3.gif" width="256">
 
 See example.
