@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularRevealLayout">
+        <attr name="revealId" format="reference"/>
+        <attr name="revealDuration" format="integer"/>
+        <attr name="revealCenter" format="enum">
+            <enum name="top_start" value="0"/>
+            <enum name="top_center" value="1"/>
+            <enum name="top_end" value="2"/>
+            <enum name="start" value="3"/>
+            <enum name="center" value="4"/>
+            <enum name="end" value="5"/>
+            <enum name="bottom_start" value="6"/>
+            <enum name="bottom_center" value="7"/>
+            <enum name="bottom_end" value="8"/>
+        </attr>
+    </declare-styleable>
+</resources>

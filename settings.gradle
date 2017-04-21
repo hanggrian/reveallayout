@@ -1,2 +1,2 @@
 include ':circular-reveal-extensions'
-include ':circular-reveal-extensions-demo'
+include ':example'

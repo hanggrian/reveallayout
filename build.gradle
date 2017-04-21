@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.1'
         classpath 'com.novoda:bintray-release:0.3.4'
     }
 }
@@ -20,34 +20,38 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext.android = [
-        sdk        : [
+ext.config = [
+        sdk       : [
                 'min'   : 15,
                 'target': 25
         ],
-        build_tools: '25.0.2',
-        test_runner: 'android.support.test.runner.AndroidJUnitRunner'
+        buildTools: '25.0.2',
+        testRunner: 'android.support.test.runner.AndroidJUnitRunner'
 ]
 
+def versionJunit = '4.12'
+def versionTestRunner = '0.5'
+def versionTestEspresso = '2.2.2'
+def versionSupport = '25.3.1'
+def versionCircularReveal = '2.0.1'
+
 ext.deps = [
-        test       : [
-                'junit:junit:4.12'
-        ],
-        androidTest: [
-                'com.android.support.test:runner:0.5',
-                'com.android.support.test.espresso:espresso-core:2.2.2'
-        ],
-        main       : [
-                'com.android.support:support-v4:25.3.0',
-                'com.github.ozodrukh:CircularReveal:2.0.1'
-        ]
+        // test
+        junit         : "junit:junit:$versionJunit",
+        // android test
+        testRunner    : "com.android.support.test:runner:$versionTestRunner",
+        testEspresso  : "com.android.support.test.espresso:espresso-core:$versionTestEspresso",
+        // android
+        supportV4     : "com.android.support:support-v4:$versionSupport",
+        // ozodrukh's
+        circularReveal: "com.github.ozodrukh:CircularReveal:$versionCircularReveal"
 ]
 
 ext.bintray = [
         user    : 'hendraanggrian',
-        group   : 'io.github.hendraanggrian',
-        artifact: 'circular-reveal-extensions',
-        version : '0.2.0',
+        group   : 'com.github.hendraanggrian',
+        artifact: 'circularreveallayout',
+        version : '0.3.0',
         desc    : 'Circular reveal animation for even lazier programmers.',
         website : 'https://github.com/hendraanggrian/circular-reveal-extensions'
 ]

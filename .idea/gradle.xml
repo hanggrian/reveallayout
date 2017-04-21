@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/circular-reveal-extensions" />
-            <option value="$PROJECT_DIR$/circular-reveal-extensions-demo" />
+            <option value="$PROJECT_DIR$/example" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

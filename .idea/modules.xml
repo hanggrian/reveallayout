@@ -7,8 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/circular-reveal/circular-reveal-circular-reveal.iml" filepath="$PROJECT_DIR$/circular-reveal/circular-reveal-circular-reveal.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-demo/circular-reveal-demo.iml" filepath="$PROJECT_DIR$/circular-reveal-demo/circular-reveal-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions-demo/circular-reveal-extensions-demo.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions-demo/circular-reveal-extensions-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
     </modules>
   </component>
 </project>
