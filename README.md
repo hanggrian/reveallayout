@@ -1,44 +1,51 @@
-![logo](/art/logo.png) Circular Reveal Extensions
-=================================================
-
-Circular reveal animation extension library of ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>.
+![logo](/art/logo.png) RevealLayout
+===================================
+Circular reveal animation for even lazier programmers. An extension of ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>.
 Built for even lazier programmers.
 
 Download
 --------
-Library are hosted in [jCenter](https://bintray.com/hendraanggrian/maven/circular-reveal-extensions).
-
+Library are hosted in [jCenter](https://bintray.com/hendraanggrian/maven/reveal-layout).
 ```gradle
-compile 'io.github.hendraanggrian:circular-reveal-extensions:0.2.0'
+compile 'com.hendraanggrian:reveal-layout:0.3.1'
 ```
 
 Simple
 ------
-<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/art/demo1.gif" width="256">
+<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo1.gif" width="256">
 
+Simply add target reveal id attribute in `RevealFrameLayout` or `RevealLinearLayout`.
 ```xml
-<io.codetail.widget.RevealFrameLayout
+<com.hendraanggrian.reveallayout.RevealFrameLayout
+    android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:revealId="@+id/target"
+    app:revealDuration="500">
 
     <View
-        android:id="@+id/target"
+        android:id="@id/target"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</io.codetail.widget.RevealFrameLayout>
+</com.hendraanggrian.reveallayout.RevealFrameLayout>
 ```
 
+This animation can also be triggered programmatically.
 ```java
-Animator animator = CircularReveal.create(target);
+RevealFrameLayout layout = (RevealFrameLayout) findById(R.id.layout);
+View target = findById(R.id.target);
+
+Animator animator = layout.animate(target);
+animator.setDuration(500);
 animator.start();
 ```
 
 With path animation
 -------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/art/demo2.gif" width="256">
+<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo2.gif" width="256">
 
 ```xml
-<io.codetail.widget.RevealFrameLayout
+<com.hendraanggrian.reveallayout.RevealFrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -51,37 +58,21 @@ With path animation
         android:id="@+id/target"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-</io.codetail.widget.RevealFrameLayout>
+</com.hendraanggrian.reveallayout.RevealFrameLayout>
 ```
 
 ```java
-AnimatorSet set = CircularReveal.createSet(source, target);
+RevealFrameLayout layout = (RevealFrameLayout) findById(R.id.layout);
+View source = findById(R.id.source);
+View target = findById(R.id.target);
+
+AnimatorSet set = layout.animateTo(source, target);
 set.start();
 ```
 
 
 Activity transition
 -------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/CircularRevealAnimator/master/art/demo3.gif" width="256">
+<img src="https://raw.githubusercontent.com/hendraanggrian/reveal-layout/master/art/demo3.gif" width="256">
 
-```java
-// from previous activity
-Intent intent = CircularReveal.createIntent(view, this, NextActivity.class);
-startActivity(intent);
-
-public class NextActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        view.post(new Runnable() {
-            @Override
-            public void run() {
-                CircularReveal.createFromIntent(getIntent(), layout).start();
-            }
-        });
-    }
-}
-```
+See example.

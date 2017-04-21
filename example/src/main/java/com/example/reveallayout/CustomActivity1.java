@@ -1,4 +1,4 @@
-package com.example.circularreveal;
+package com.example.reveallayout;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -12,14 +12,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hendraanggrian.widget.CircularRevealFrameLayout;
+import com.hendraanggrian.widget.RevealFrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CustomActivity1 extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.circularrevealframelayout) CircularRevealFrameLayout layout;
+    @BindView(R.id.circularrevealframelayout) RevealFrameLayout layout;
     @BindView(R.id.buttonSimple) View buttonSimple;
     @BindView(R.id.buttonFrom) View buttonFrom;
     @BindView(R.id.buttonFull) View buttonFull;
@@ -44,7 +44,7 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonSimple:
-                Animator animator1 = layout.create(maskSimple);
+                Animator animator1 = layout.animate(maskSimple);
                 animator1.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -54,7 +54,7 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
                 animator1.start();
                 break;
             case R.id.maskSimple:
-                Animator animator2 = layout.create(maskSimple, true);
+                Animator animator2 = layout.animate(maskSimple, true);
                 animator2.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
@@ -64,7 +64,7 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
                 animator2.start();
                 break;
             case R.id.buttonFrom:
-                AnimatorSet animatorSet1 = layout.createSet(buttonFrom, maskTo);
+                AnimatorSet animatorSet1 = layout.animateTo(buttonFrom, maskTo);
                 animatorSet1.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -75,7 +75,7 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
                 animatorSet1.start();
                 break;
             case R.id.maskTo:
-                AnimatorSet animatorSet2 = layout.createSet(buttonFrom, maskTo, true);
+                AnimatorSet animatorSet2 = layout.animateTo(buttonFrom, maskTo, true);
                 animatorSet2.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {

@@ -1,4 +1,4 @@
-package com.example.circularreveal;
+package com.example.reveallayout;
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)

@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveal;
+package com.hendraanggrian.reveallayout;
 
 import android.support.annotation.NonNull;
 import android.view.View;

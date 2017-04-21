@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CircularRevealLayout">
+    <declare-styleable name="RevealLayout">
         <attr name="revealId" format="reference"/>
         <attr name="revealDuration" format="integer"/>
         <attr name="revealCenter" format="enum">

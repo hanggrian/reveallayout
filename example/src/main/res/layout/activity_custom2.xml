@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hendraanggrian.widget.CircularRevealFrameLayout
+<com.hendraanggrian.widget.RevealFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/circularrevealframelayout"
@@ -16,4 +16,4 @@
         android:text="Yo"
         android:textColor="?colorAccent"
         android:textSize="64sp"/>
-</com.hendraanggrian.widget.CircularRevealFrameLayout>
+</com.hendraanggrian.widget.RevealFrameLayout>

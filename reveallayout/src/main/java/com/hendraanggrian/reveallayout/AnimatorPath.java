@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hendraanggrian.circularreveal;
+package com.hendraanggrian.reveallayout;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +32,7 @@ public class AnimatorPath {
 
   /**
    * Move from the current path point to the new one
-   * specified by x and y. This will create a discontinuity if this point is
+   * specified by x and y. This will animate a discontinuity if this point is
    * neither the first point in the path nor the same as the previous point
    * in the path.
    */

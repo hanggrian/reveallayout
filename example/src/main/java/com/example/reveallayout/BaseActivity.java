@@ -1,4 +1,4 @@
-package com.example.circularreveal;
+package com.example.reveallayout;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;

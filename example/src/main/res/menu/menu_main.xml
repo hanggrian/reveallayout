@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context="com.example.circularreveal.CustomActivity1">
+    xmlns:tools="http://schemas.android.com/tools" tools:context="com.example.reveallayout.CustomActivity1">
 
     <item android:id="@+id/sample2"
           android:title="Sample2"

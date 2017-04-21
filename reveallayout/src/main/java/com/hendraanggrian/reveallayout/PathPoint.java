@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hendraanggrian.circularreveal;
+package com.hendraanggrian.reveallayout;
 
 /**
  * A class that holds information about a location and how the path should get to that

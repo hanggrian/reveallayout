@@ -1,4 +1,4 @@
-package com.example.circularreveal;
+package com.example.reveallayout;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.hendraanggrian.widget.CircularRevealFrameLayout;
+import com.hendraanggrian.widget.RevealFrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,7 +17,7 @@ public class CustomActivity2 extends AppCompatActivity {
 
     public final static String EXTRA_RECT = "com.example.circularreveal.CustomActivity2";
 
-    @BindView(R.id.circularrevealframelayout) CircularRevealFrameLayout layout;
+    @BindView(R.id.circularrevealframelayout) RevealFrameLayout layout;
     @BindView(R.id.textview) TextView textView;
     private Rect rect;
 
@@ -30,14 +30,14 @@ public class CustomActivity2 extends AppCompatActivity {
         textView.post(new Runnable() {
             @Override
             public void run() {
-                layout.create(textView, rect.centerX(), rect.centerY()).start();
+                layout.animate(textView, rect.centerX(), rect.centerY()).start();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        Animator animator = layout.create(textView, rect.centerX(), rect.centerY(), true);
+        Animator animator = layout.animate(textView, rect.centerX(), rect.centerY(), true);
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {

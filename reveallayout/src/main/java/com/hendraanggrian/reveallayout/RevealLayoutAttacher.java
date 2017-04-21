@@ -1,4 +1,4 @@
-package com.hendraanggrian.circularreveal;
+package com.hendraanggrian.reveallayout;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -14,23 +14,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import io.codetail.animation.ViewAnimationUtils;
-import io.com.hendraanggrian.circularreveal.R;
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public class CircularRevealLayoutAttacher implements CircularRevealLayout {
+public class RevealLayoutAttacher implements RevealLayout {
 
     private final int revealId;
     private final int revealDuration;
     private final RevealCenter revealCenter;
 
-    public CircularRevealLayoutAttacher(Context context, AttributeSet attrs) {
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CircularRevealLayout);
+    public RevealLayoutAttacher(Context context, AttributeSet attrs) {
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.RevealLayout);
         try {
-            revealId = array.getResourceId(R.styleable.CircularRevealLayout_revealId, -1);
-            revealDuration = array.getInt(R.styleable.CircularRevealLayout_revealDuration, -1);
-            revealCenter = RevealCenter.valueOf(array.getInt(R.styleable.CircularRevealLayout_revealCenter, RevealCenter.CENTER.attrId));
+            revealId = array.getResourceId(R.styleable.RevealLayout_revealId, -1);
+            revealDuration = array.getInt(R.styleable.RevealLayout_revealDuration, -1);
+            revealCenter = RevealCenter.valueOf(array.getInt(R.styleable.RevealLayout_revealCenter, RevealCenter.CENTER.attrId));
         } finally {
             array.recycle();
         }
@@ -41,7 +40,7 @@ public class CircularRevealLayoutAttacher implements CircularRevealLayout {
             child.post(new Runnable() {
                 @Override
                 public void run() {
-                    Animator animator = create(child, revealCenter);
+                    Animator animator = animate(child, revealCenter);
                     if (revealDuration != -1)
                         animator.setDuration(revealDuration);
                     animator.start();
@@ -52,37 +51,37 @@ public class CircularRevealLayoutAttacher implements CircularRevealLayout {
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view) {
-        return create(view, false);
+    public Animator animate(@NonNull View view) {
+        return animate(view, false);
     }
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view, @NonNull RevealCenter revealCenter) {
-        return create(view, revealCenter, false);
+    public Animator animate(@NonNull View view, @NonNull RevealCenter revealCenter) {
+        return animate(view, revealCenter, false);
     }
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view, int startX, int startY) {
-        return create(view, startX, startY, false);
+    public Animator animate(@NonNull View view, int startX, int startY) {
+        return animate(view, startX, startY, false);
     }
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view, boolean reverse) {
-        return create(view, RevealCenter.CENTER, reverse);
+    public Animator animate(@NonNull View view, boolean reverse) {
+        return animate(view, RevealCenter.CENTER, reverse);
     }
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view, @NonNull RevealCenter revealCenter, boolean reverse) {
-        return create(view, revealCenter.getX(view), revealCenter.getY(view), reverse);
+    public Animator animate(@NonNull View view, @NonNull RevealCenter revealCenter, boolean reverse) {
+        return animate(view, revealCenter.getX(view), revealCenter.getY(view), reverse);
     }
 
     @NonNull
     @Override
-    public Animator create(@NonNull View view, int startX, int startY, boolean reverse) {
+    public Animator animate(@NonNull View view, int startX, int startY, boolean reverse) {
         return ViewAnimationUtils.createCircularReveal(
                 view,
                 startX,
@@ -94,13 +93,13 @@ public class CircularRevealLayoutAttacher implements CircularRevealLayout {
 
     @NonNull
     @Override
-    public AnimatorSet createSet(@NonNull View source, @NonNull View target) {
-        return createSet(source, target, false);
+    public AnimatorSet animateTo(@NonNull View source, @NonNull View target) {
+        return animateTo(source, target, false);
     }
 
     @NonNull
     @Override
-    public AnimatorSet createSet(@NonNull View source, @NonNull final View target, boolean reverse) {
+    public AnimatorSet animateTo(@NonNull View source, @NonNull final View target, boolean reverse) {
         // Cancel all concurrent events on view
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
             source.cancelPendingInputEvents();

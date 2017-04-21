@@ -1,2 +1,2 @@
-include ':circular-reveal-extensions'
+include ':reveallayout'
 include ':example'

@@ -49,11 +49,11 @@ ext.deps = [
 
 ext.bintray = [
         user    : 'hendraanggrian',
-        group   : 'com.github.hendraanggrian',
-        artifact: 'circularreveallayout',
-        version : '0.3.0',
+        group   : 'com.hendraanggrian',
+        artifact: 'reveallayout',
+        version : '0.3.1',
         desc    : 'Circular reveal animation for even lazier programmers.',
-        website : 'https://github.com/hendraanggrian/circular-reveal-extensions'
+        website : 'https://github.com/hendraanggrian/reveal-layout'
 ]
 
 //$ ./gradlew bintrayUpload -PbintrayUser=hendraanggrian -PbintrayKey= -PdryRun=false
