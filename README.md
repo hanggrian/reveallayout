@@ -1,14 +1,7 @@
-![logo](/art/logo.png) RevealLayout
-===================================
+RevealLayout
+============
 Circular reveal animation for even lazier programmers. An extension of ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>.
 Built for even lazier programmers.
-
-Download
---------
-Library are hosted in [jCenter](https://bintray.com/hendraanggrian/maven/reveal-layout).
-```gradle
-compile 'com.hendraanggrian:reveal-layout:0.3.1'
-```
 
 Simple
 ------
@@ -76,3 +69,31 @@ Activity transition
 <img src="https://raw.githubusercontent.com/hendraanggrian/reveallayout/master/art/demo3.gif" width="256">
 
 See example.
+
+Download
+--------
+```gradle
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.hendraanggrian:reveallayout:0.3.1'
+}
+```
+
+License
+-------
+    Copyright 2017 Hendra Anggrian
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
