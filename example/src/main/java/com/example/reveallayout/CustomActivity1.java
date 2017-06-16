@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,9 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
                 animator2.start();
                 break;
             case R.id.buttonFrom:
-                AnimatorSet animatorSet1 = layout.animateTo(buttonFrom, maskTo);
+                AnimatorSet animatorSet1 = new AnimatorSet();
+                animatorSet1.setInterpolator(new FastOutSlowInInterpolator());
+                animatorSet1.playTogether(layout.animateTo(buttonFrom, maskTo));
                 animatorSet1.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -75,7 +78,9 @@ public class CustomActivity1 extends AppCompatActivity implements View.OnClickLi
                 animatorSet1.start();
                 break;
             case R.id.maskTo:
-                AnimatorSet animatorSet2 = layout.animateTo(buttonFrom, maskTo, true);
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                animatorSet2.playTogether(layout.animateTo(buttonFrom, maskTo, true));
+                animatorSet2.setInterpolator(new FastOutSlowInInterpolator());
                 animatorSet2.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {

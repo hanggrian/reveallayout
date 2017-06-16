@@ -1,38 +1,37 @@
 package com.hendraanggrian.reveallayout;
 
 import android.animation.Animator;
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import io.codetail.animation.ViewAnimationUtils;
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public class RevealLayoutAttacher implements RevealLayout {
+public class RevealableLayoutImpl implements RevealableLayout {
 
     private final int revealId;
     private final int revealDuration;
     private final RevealCenter revealCenter;
 
-    public RevealLayoutAttacher(Context context, AttributeSet attrs) {
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.RevealLayout);
-        try {
-            revealId = array.getResourceId(R.styleable.RevealLayout_revealId, -1);
-            revealDuration = array.getInt(R.styleable.RevealLayout_revealDuration, -1);
-            revealCenter = RevealCenter.valueOf(array.getInt(R.styleable.RevealLayout_revealCenter, RevealCenter.CENTER.attrId));
-        } finally {
-            array.recycle();
-        }
+    public RevealableLayoutImpl(Context context, AttributeSet attrs) {
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RevealLayout);
+        revealId = a.getResourceId(R.styleable.RevealLayout_revealId, -1);
+        revealDuration = a.getInt(R.styleable.RevealLayout_revealDuration, -1);
+        revealCenter = RevealCenter.valueOf(a.getInt(R.styleable.RevealLayout_revealCenter, RevealCenter.CENTER.attrId));
+        a.recycle();
     }
 
     public void addView(@NonNull final View child) {
@@ -41,8 +40,9 @@ public class RevealLayoutAttacher implements RevealLayout {
                 @Override
                 public void run() {
                     Animator animator = animate(child, revealCenter);
-                    if (revealDuration != -1)
+                    if (revealDuration != -1) {
                         animator.setDuration(revealDuration);
+                    }
                     animator.start();
                 }
             });
@@ -93,30 +93,32 @@ public class RevealLayoutAttacher implements RevealLayout {
 
     @NonNull
     @Override
-    public AnimatorSet animateTo(@NonNull View source, @NonNull View target) {
+    public Collection<Animator> animateTo(@NonNull View source, @NonNull View target) {
         return animateTo(source, target, false);
     }
 
     @NonNull
     @Override
-    public AnimatorSet animateTo(@NonNull View source, @NonNull final View target, boolean reverse) {
+    public Collection<Animator> animateTo(@NonNull View source, @NonNull final View target, boolean reverse) {
+        List<Animator> animators = new ArrayList<>();
         // Cancel all concurrent events on view
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             source.cancelPendingInputEvents();
+        }
 
         // Coordinates of circle initial point
         final ViewGroup parent = (ViewGroup) target.getParent();
         final Rect srcRect = createRect(parent, source);
         final Rect trgRect = createRect(parent, target);
 
-        Animator circularReveal = ViewAnimationUtils.createCircularReveal(
+        animators.add(ViewAnimationUtils.createCircularReveal(
                 target,
                 trgRect.centerX(),
                 trgRect.centerY(),
                 reverse ? getEndRadius(target) : srcRect.width() / 2,
                 reverse ? srcRect.width() / 2 : getEndRadius(target),
                 View.LAYER_TYPE_HARDWARE
-        );
+        ));
 
         // Put Mask view at circle 8initial points
         //target.setX(srcRect.left - trgRect.centerX());
@@ -132,19 +134,15 @@ public class RevealLayoutAttacher implements RevealLayout {
             path.moveTo(trgRect.left, trgRect.top);
             path.curveTo(trgRect.left, trgRect.top, 0, c0Y, c0X, c0Y);
         }
-        ObjectAnimator pathAnimator = ObjectAnimator.ofObject(new OnSetListener() {
+        animators.add(ObjectAnimator.ofObject(new OnSetListener() {
             @Override
             public void setMaskLocation(@NonNull PathPoint location) {
                 target.setX(location.mX);
                 target.setY(location.mY);
             }
-        }, "maskLocation", new PathEvaluator(), path.getPoints().toArray());
+        }, "maskLocation", new PathEvaluator(), path.getPoints().toArray()));
 
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(circularReveal, pathAnimator);
-        set.setInterpolator(new FastOutSlowInInterpolator());
-        set.setDuration(400);
-        return set;
+        return animators;
     }
 
     private interface OnSetListener {

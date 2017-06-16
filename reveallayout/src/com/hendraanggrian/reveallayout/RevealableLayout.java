@@ -1,14 +1,15 @@
 package com.hendraanggrian.reveallayout;
 
 import android.animation.Animator;
-import android.animation.AnimatorSet;
 import android.support.annotation.NonNull;
 import android.view.View;
+
+import java.util.Collection;
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public interface RevealLayout {
+public interface RevealableLayout {
 
     @NonNull
     Animator animate(@NonNull View view);
@@ -29,8 +30,8 @@ public interface RevealLayout {
     Animator animate(@NonNull View view, int startX, int startY, boolean reverse);
 
     @NonNull
-    AnimatorSet animateTo(@NonNull View source, @NonNull View target);
+    Collection<Animator> animateTo(@NonNull View source, @NonNull View target);
 
     @NonNull
-    AnimatorSet animateTo(@NonNull View source, @NonNull final View target, boolean reverse);
+    Collection<Animator> animateTo(@NonNull View source, @NonNull final View target, boolean reverse);
 }

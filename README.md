@@ -75,10 +75,12 @@ Download
 ```gradle
 repositories {
     jcenter()
+    maven { url "https://maven.google.com" }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.hendraanggrian:reveallayout:0.3.1'
+    compile 'com.hendraanggrian:reveallayout:0.4.0'
 }
 ```
 

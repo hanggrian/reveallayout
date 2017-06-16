@@ -1,34 +1,33 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply from: 'https://raw.githubusercontent.com/HendraAnggrian/hendraanggrian.github.io/master/bintray.gradle'
 
 android {
-    compileSdkVersion config.sdk.target
-    buildToolsVersion config.buildTools
+    compileSdkVersion versions.sdk.target
+    buildToolsVersion versions.buildTools
     defaultConfig {
-        minSdkVersion config.sdk.min
-        targetSdkVersion config.sdk.target
-        testInstrumentationRunner config.testRunner
+        minSdkVersion versions.sdk.min
+        targetSdkVersion versions.sdk.target
+    }
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+        main.java.srcDirs 'src'
+        main.res.srcDirs 'res', 'res-public'
+        main.resources.srcDir 'src'
     }
 }
 
 dependencies {
-    testCompile deps.junit
-    androidTestCompile(deps.testRunner) {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile(deps.testEspresso) {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-
-    compile deps.supportV4
-    compile deps.circularReveal
+    compile "com.android.support:support-v4:$versions.support"
+    compile "com.hendraanggrian:support-utils:$versions.utils"
+    compile "com.github.ozodrukh:CircularReveal:$versions.circularreveal@aar"
 }
 
 publish {
     userOrg = bintray.user
     groupId = bintray.group
-    artifactId = bintray.artifact
-    publishVersion = bintray.version
-    desc = bintray.desc
-    website = bintray.website
+    artifactId = bintray.artifact.reveallayout.id
+    publishVersion = versions.release
+    desc = bintray.artifact.reveallayout.desc
+    website = bintray.artifact.reveallayout.website
 }
