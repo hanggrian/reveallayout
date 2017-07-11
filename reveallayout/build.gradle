@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.novoda.bintray-release'
 apply from: 'https://raw.githubusercontent.com/HendraAnggrian/hendraanggrian.github.io/master/bintray.gradle'
 
@@ -8,19 +9,39 @@ android {
     defaultConfig {
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     sourceSets {
         main.manifest.srcFile 'AndroidManifest.xml'
         main.java.srcDirs 'src'
         main.res.srcDirs 'res', 'res-public'
         main.resources.srcDir 'src'
+        androidTest.setRoot('tests')
+        androidTest.manifest.srcFile 'tests/AndroidManifest.xml'
+        androidTest.java.srcDir 'tests/src'
+        androidTest.res.srcDir 'tests/res'
+        androidTest.resources.srcDir 'tests/src'
     }
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin.stdlib"
     compile "com.android.support:support-v4:$versions.support"
-    compile "com.hendraanggrian:support-utils:$versions.utils"
-    compile "com.github.ozodrukh:CircularReveal:$versions.circularreveal@aar"
+    compile "com.github.ozodrukh.CircularReveal:circualreveal:$versions.circularreveal"
+
+    androidTestCompile "org.jetbrains.anko:anko-commons:$versions.kotlin.anko"
+    androidTestCompile "com.android.support:design:$versions.support"
+    androidTestCompile "com.android.support:cardview-v7:$versions.support"
+    androidTestCompile("com.android.support.test:rules:$versions.rules") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile("com.android.support.test:runner:$versions.runner") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$versions.espresso") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    testCompile "junit:junit:$versions.junit"
 }
 
 publish {

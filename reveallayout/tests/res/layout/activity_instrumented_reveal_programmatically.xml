@@ -13,34 +13,39 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:layout_collapseMode="pin"
             app:title="@string/app_name"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_gravity="center_vertical">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="100"/>
+        </FrameLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <com.hendraanggrian.widget.RevealFrameLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <Button
-                android:id="@+id/buttonSimple"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Simple"/>
-
-            <Button
-                android:id="@+id/buttonCustom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Custom"/>
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+        <android.support.v7.widget.CardView
+            android:id="@id/cardView"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="?colorAccent"/>
+    </com.hendraanggrian.widget.RevealFrameLayout>
 </android.support.design.widget.CoordinatorLayout>

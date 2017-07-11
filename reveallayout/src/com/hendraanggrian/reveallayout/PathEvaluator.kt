@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hendraanggrian.reveallayout;
+package com.hendraanggrian.reveallayout
 
-import android.animation.TypeEvaluator;
+import android.animation.TypeEvaluator
 
 /**
  * This evaluator interpolates between two PathPoint values given the value t, the
@@ -23,27 +23,27 @@ import android.animation.TypeEvaluator;
  * on the operation specified by the endValue (the operation for the interval between
  * PathPoints is always specified by the end point single that interval).
  */
-public class PathEvaluator implements TypeEvaluator<PathPoint> {
-    @Override
-    public PathPoint evaluate(float t, PathPoint startValue, PathPoint endValue) {
-        float x, y;
+class PathEvaluator : TypeEvaluator<PathPoint> {
+    override fun evaluate(t: Float, startValue: PathPoint, endValue: PathPoint): PathPoint {
+        val x: Float
+        val y: Float
         if (endValue.mOperation == PathPoint.CURVE) {
-            float oneMinusT = 1 - t;
+            val oneMinusT = 1 - t
             x = oneMinusT * oneMinusT * oneMinusT * startValue.mX +
                     3 * oneMinusT * oneMinusT * t * endValue.mControl0X +
                     3 * oneMinusT * t * t * endValue.mControl1X +
-                    t * t * t * endValue.mX;
+                    t * t * t * endValue.mX
             y = oneMinusT * oneMinusT * oneMinusT * startValue.mY +
                     3 * oneMinusT * oneMinusT * t * endValue.mControl0Y +
                     3 * oneMinusT * t * t * endValue.mControl1Y +
-                    t * t * t * endValue.mY;
+                    t * t * t * endValue.mY
         } else if (endValue.mOperation == PathPoint.LINE) {
-            x = startValue.mX + t * (endValue.mX - startValue.mX);
-            y = startValue.mY + t * (endValue.mY - startValue.mY);
+            x = startValue.mX + t * (endValue.mX - startValue.mX)
+            y = startValue.mY + t * (endValue.mY - startValue.mY)
         } else {
-            x = endValue.mX;
-            y = endValue.mY;
+            x = endValue.mX
+            y = endValue.mY
         }
-        return PathPoint.moveTo(x, y);
+        return PathPoint.moveTo(x, y)
     }
 }
