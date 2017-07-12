@@ -6,6 +6,7 @@ import android.graphics.Rect
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.hendraanggrian.reveallayout.RevealPoint
 import kotlinx.android.synthetic.main.activity_custom2.*
 
 /**
@@ -24,7 +25,7 @@ class CustomActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_custom2)
         rect = intent.getParcelableExtra<Rect>(EXTRA_RECT)
         textView.post {
-            layout.reveal(textView, rect!!.centerX(), rect!!.centerY()).apply {
+            layout.reveal(textView, RevealPoint(rect!!.centerX(), rect!!.centerY())).apply {
                 duration = 2000
                 start()
             }
@@ -32,7 +33,7 @@ class CustomActivity2 : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        layout.reveal(textView, rect!!.centerX(), rect!!.centerY(), true).apply {
+        layout.reveal(textView, RevealPoint(rect!!.centerX(), rect!!.centerY()), true).apply {
             duration = 2000
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {

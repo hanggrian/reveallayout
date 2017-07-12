@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:revealDuration="600"
+    app:revealGravity="top|end"
     app:revealId="@+id/cardview_simple"
     tools:context=".SimpleActivity">
 

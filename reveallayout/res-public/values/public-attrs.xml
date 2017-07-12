@@ -2,5 +2,5 @@
 <resources>
     <public name="revealId" type="attr"/>
     <public name="revealDuration" type="attr"/>
-    <public name="revealCenter" type="attr"/>
+    <public name="revealGravity" type="attr"/>
 </resources>

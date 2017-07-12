@@ -1,6 +1,7 @@
 package com.hendraanggrian.reveallayout
 
 import android.animation.Animator
+import android.view.Gravity
 import android.view.View
 
 /**
@@ -8,13 +9,13 @@ import android.view.View
  */
 interface RevealableLayout {
 
-    fun revealTo(source: View, target: View, reverse: Boolean = false): Collection<Animator>
-
-    fun reveal(view: View, startX: Int, startY: Int, reverse: Boolean = false): Animator
-
-    fun reveal(view: View, revealCenter: RevealCenter, reverse: Boolean = false): Animator
-            = reveal(view, revealCenter.getX(view), revealCenter.getY(view), reverse)
-
     fun reveal(view: View, reverse: Boolean = false): Animator
-            = reveal(view, RevealCenter.CENTER, reverse)
+            = reveal(view, Gravity.CENTER, reverse)
+
+    fun reveal(view: View, gravity: Int, reverse: Boolean = false): Animator
+            = reveal(view, RevealPoint.calculateRevealPoint(view, gravity), reverse)
+
+    fun reveal(view: View, point: RevealPoint, reverse: Boolean = false): Animator
+
+    fun revealTo(source: View, target: View, reverse: Boolean = false): Collection<Animator>
 }

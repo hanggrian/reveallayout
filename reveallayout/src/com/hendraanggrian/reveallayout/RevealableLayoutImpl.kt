@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.Rect
 import android.os.Build
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import io.codetail.animation.ViewAnimationUtils
@@ -16,28 +17,48 @@ import java.util.*
  */
 class RevealableLayoutImpl(context: Context, attrs: AttributeSet?) : RevealableLayout {
 
+    companion object {
+        private const val UNSPECIFIED_ID = -1
+        private const val UNSPECIFIED_DURATION = -1
+
+        private fun createRect(parent: ViewGroup, view: View): Rect {
+            val rect = Rect()
+            view.getDrawingRect(rect)
+            parent.offsetDescendantRectToMyCoords(view, rect)
+            return rect
+        }
+
+        private fun getEndRadius(view: View): Float {
+            val cx = (view.left + view.right) / 2
+            val cy = (view.top + view.bottom) / 2
+            val dx = Math.max(cx, view.width - cx)
+            val dy = Math.max(cy, view.height - cy)
+            return Math.hypot(dx.toDouble(), dy.toDouble()).toFloat()
+        }
+    }
+
     private val revealId: Int
     private val revealDuration: Int
-    private val revealCenter: RevealCenter
+    private val revealGravity: Int
 
     init {
         val a = context.obtainStyledAttributes(attrs, R.styleable.RevealLayout)
-        revealId = a.getResourceId(R.styleable.RevealLayout_revealId, -1)
-        revealDuration = a.getInt(R.styleable.RevealLayout_revealDuration, -1)
-        revealCenter = RevealCenter.valueOf(a.getInt(R.styleable.RevealLayout_revealCenter, RevealCenter.CENTER.attrId))
+        revealId = a.getResourceId(R.styleable.RevealLayout_revealId, UNSPECIFIED_ID)
+        revealDuration = a.getInt(R.styleable.RevealLayout_revealDuration, UNSPECIFIED_DURATION)
+        revealGravity = a.getInt(R.styleable.RevealLayout_revealGravity, Gravity.CENTER)
         a.recycle()
     }
 
     fun addView(child: View?) {
+        if (revealId == UNSPECIFIED_ID) return
         child?.let {
-            if (it.id == revealId) {
-                it.post {
-                    reveal(it, revealCenter).apply {
-                        if (revealDuration != -1) {
-                            duration = revealDuration.toLong()
-                        }
-                    }.start()
-                }
+            if (it.id != revealId) return
+            it.post {
+                reveal(it, revealGravity).apply {
+                    if (revealDuration != UNSPECIFIED_DURATION) {
+                        duration = revealDuration.toLong()
+                    }
+                }.start()
             }
         }
     }
@@ -77,7 +98,7 @@ class RevealableLayoutImpl(context: Context, attrs: AttributeSet?) : RevealableL
             path.moveTo(trgRect.left.toFloat(), trgRect.top.toFloat())
             path.curveTo(trgRect.left.toFloat(), trgRect.top.toFloat(), 0f, c0Y, c0X, c0Y)
         }
-        animators.add(ObjectAnimator.ofObject(object : OnSetListener {
+        animators.add(ObjectAnimator.ofObject(object : OnMaskListener {
             override fun setMaskLocation(location: PathPoint) {
                 target.x = location.mX
                 target.y = location.mY
@@ -87,31 +108,15 @@ class RevealableLayoutImpl(context: Context, attrs: AttributeSet?) : RevealableL
         return animators
     }
 
-    override fun reveal(view: View, startX: Int, startY: Int, reverse: Boolean): Animator = ViewAnimationUtils.createCircularReveal(
+    override fun reveal(view: View, point: RevealPoint, reverse: Boolean): Animator = ViewAnimationUtils.createCircularReveal(
             view,
-            startX,
-            startY,
-            if (reverse) getEndRadius(view) * 2 else 0f,
-            if (reverse) 0f else getEndRadius(view) * 2)
+            point.x,
+            point.y,
+            if (reverse) getEndRadius(view) else 0f,
+            if (reverse) 0f else getEndRadius(view))
 
-
-    private interface OnSetListener {
+    private interface OnMaskListener {
 
         fun setMaskLocation(location: PathPoint)
-    }
-
-    private fun createRect(parent: ViewGroup, view: View): Rect {
-        val rect = Rect()
-        view.getDrawingRect(rect)
-        parent.offsetDescendantRectToMyCoords(view, rect)
-        return rect
-    }
-
-    private fun getEndRadius(view: View): Float {
-        val cx = (view.left + view.right) / 2
-        val cy = (view.top + view.bottom) / 2
-        val dx = Math.max(cx, view.width - cx)
-        val dy = Math.max(cy, view.height - cy)
-        return Math.hypot(dx.toDouble(), dy.toDouble()).toFloat()
     }
 }

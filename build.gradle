@@ -13,6 +13,7 @@ buildscript {
                     anko  : '0.10.1'
             ],
             support       : '25.4.0',
+            utils         : '0.21',
             circularreveal: '2.1.0',
 
             // test

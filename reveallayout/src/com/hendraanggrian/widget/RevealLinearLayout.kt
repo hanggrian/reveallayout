@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
+import com.hendraanggrian.reveallayout.RevealPoint
 import com.hendraanggrian.reveallayout.RevealableLayout
 import com.hendraanggrian.reveallayout.RevealableLayoutImpl
 
@@ -25,5 +26,5 @@ class RevealLinearLayout @JvmOverloads constructor(
 
     override fun revealTo(source: View, target: View, reverse: Boolean): Collection<Animator> = impl.revealTo(source, target, reverse)
 
-    override fun reveal(view: View, startX: Int, startY: Int, reverse: Boolean): Animator = impl.reveal(view, startX, startY, reverse)
+    override fun reveal(view: View, point: RevealPoint, reverse: Boolean): Animator = impl.reveal(view, point, reverse)
 }
