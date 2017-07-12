@@ -11,6 +11,6 @@
     <application
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <uses-library android:name="android.test.runner"/>
-        <activity android:name=".InstrumentedRevealByLayoutActivity"/>
+        <activity android:name=".InstrumentedActivity"/>
     </application>
 </manifest>

@@ -53,5 +53,4 @@
         app:cardBackgroundColor="?colorAccent"
         app:cardCornerRadius="2dp"
         app:cardElevation="8dp"/>
-
 </com.hendraanggrian.widget.RevealFrameLayout>

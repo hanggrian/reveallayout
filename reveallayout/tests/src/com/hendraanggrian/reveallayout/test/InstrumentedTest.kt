@@ -9,69 +9,65 @@ import android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import android.support.v7.widget.Toolbar
+import android.support.v4.app.Fragment
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ProgressBar
-import com.hendraanggrian.widget.RevealFrameLayout
-import org.hamcrest.Matcher
-import org.junit.FixMethodOrder
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runners.MethodSorters
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
 @RunWith(AndroidJUnit4::class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class InstrumentedTest {
 
-    companion object {
-        private const val DELAY_COUNTDOWN: Long = 3000
+    @Rule @JvmField var rule = ActivityTestRule(InstrumentedActivity::class.java)
+
+    //@Test
+    @Throws(Exception::class)
+    fun revealSimple() {
+        onView(withId(R.id.container)).perform(replaceFragment(Test1Fragment()))
+        onView(withId(R.id.progressBar)).perform(delay(3000))
     }
 
-    @Rule @JvmField var rule = ActivityTestRule(InstrumentedRevealByLayoutActivity::class.java)
+    //@Test
+    @Throws(Exception::class)
+    fun revealProgramatically() {
+        onView(withId(R.id.container)).perform(replaceFragment(Test2Fragment()))
+        onView(withId(R.id.progressBar)).perform(delay(6000))
+    }
 
     @Test
-    fun test1_reveal_bylayout() {
-        onView(withId(R.id.toolbar)).perform(setTitle("test1_reveal_bylayout()"))
-        onView(withId(R.id.progressBar)).perform(delay())
+    @Throws(Exception::class)
+    fun revealTo() {
+        onView(withId(R.id.container)).perform(replaceFragment(Test3Fragment()))
+        onView(withId(R.id.progressBar)).perform(delay(4000))
     }
 
-    @Test
-    fun test2_reveal_programmatically() {
-        onView(withId(R.id.toolbar)).perform(setTitle("test2_reveal_programmatically()"))
-        onView(withId(R.id.layout)).perform(object : ViewAction {
-            override fun getDescription(): String = "test2_reveal_programmatically()"
-            override fun getConstraints(): Matcher<View> = isAssignableFrom(RevealFrameLayout::class.java)
-            override fun perform(uiController: UiController?, view: View?) {
-                view as RevealFrameLayout
-
-            }
-        })
-        onView(withId(R.id.progressBar)).perform(delay())
-    }
-
-    fun setTitle(title: String): ViewAction = object : ViewAction {
-        override fun getDescription() = "set title to " + title
-        override fun getConstraints() = isAssignableFrom(Toolbar::class.java)
-        override fun perform(uiController: UiController, view: View) {
-            (view as Toolbar).title = title
+    fun replaceFragment(fragment: Fragment): ViewAction = object : ViewAction {
+        override fun getDescription() = "attaching fragment " + fragment.javaClass.simpleName
+        override fun getConstraints() = isAssignableFrom(FrameLayout::class.java)
+        override fun perform(uiController: UiController?, view: View) {
+            rule.activity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit()
         }
     }
 
-    fun delay(): ViewAction = object : ViewAction {
-        override fun getDescription() = "delay for " + DELAY_COUNTDOWN
+    fun delay(millis: Long): ViewAction = object : ViewAction {
+        override fun getDescription() = "delay for " + millis
         override fun getConstraints() = isAssignableFrom(ProgressBar::class.java)
         override fun perform(uiController: UiController, view: View) {
             view as ProgressBar
-            object : CountDownTimer(DELAY_COUNTDOWN, 100) {
+            object : CountDownTimer(millis, 100) {
                 override fun onTick(millisUntilFinished: Long) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        view.setProgress((view.max * millisUntilFinished / DELAY_COUNTDOWN).toInt(), true)
+                        view.setProgress((view.max * millisUntilFinished / millis).toInt(), true)
                     } else {
-                        view.progress = (view.max * millisUntilFinished / DELAY_COUNTDOWN).toInt()
+                        view.progress = (view.max * millisUntilFinished / millis).toInt()
                     }
                 }
 
@@ -79,7 +75,7 @@ class InstrumentedTest {
                     view.visibility = View.GONE
                 }
             }.start()
-            uiController.loopMainThreadForAtLeast(DELAY_COUNTDOWN)
+            uiController.loopMainThreadForAtLeast(millis)
         }
     }
 }

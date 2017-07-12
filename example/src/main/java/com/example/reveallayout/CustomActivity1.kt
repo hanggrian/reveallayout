@@ -8,8 +8,10 @@ import android.graphics.Rect
 import android.os.Bundle
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import com.hendraanggrian.reveallayout.Radius
 import kotlinx.android.synthetic.main.activity_custom1.*
 
 /**
@@ -30,7 +32,6 @@ class CustomActivity1 : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.buttonSimple -> layout.reveal(maskSimple).apply {
-                duration = 2000
                 addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationStart(animation: Animator) {
                         maskSimple.visibility = View.VISIBLE
@@ -38,8 +39,7 @@ class CustomActivity1 : AppCompatActivity(), View.OnClickListener {
                 })
                 start()
             }
-            R.id.maskSimple -> layout.reveal(maskSimple, true).apply {
-                duration = 2000
+            R.id.maskSimple -> layout.reveal(maskSimple, Gravity.CENTER, Radius.DEFAULT_NONE).apply {
                 addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator) {
                         maskSimple.visibility = View.INVISIBLE
@@ -61,8 +61,8 @@ class CustomActivity1 : AppCompatActivity(), View.OnClickListener {
             }
             R.id.maskTo -> AnimatorSet().apply {
                 duration = 2000
-                playTogether(layout.revealTo(buttonFrom, maskTo, true))
                 interpolator = FastOutSlowInInterpolator()
+                playTogether(layout.revealTo(buttonFrom, maskTo, Radius.DEFAULT_NONE))
                 addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator) {
                         buttonFrom.visibility = View.VISIBLE
