@@ -1,2 +1,2 @@
 include ':reveallayout'
-include ':example'
+include ':example-kotlin', ':example-java'

@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+ext.bundler = '0.5.0'
+ext.butterknife = '8.7.0'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.6.1'
+    }
+}
+
+android {
+    compileSdkVersion versions.sdk.target
+    buildToolsVersion versions.buildTools
+    defaultConfig {
+        applicationId 'com.example.reveallayout'
+        versionCode 1
+        versionName '1.0'
+        minSdkVersion versions.sdk.min
+        targetSdkVersion versions.sdk.target
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile project(':reveallayout')
+
+    compile "com.android.support:appcompat-v7:$versions.support"
+    compile "com.android.support:cardview-v7:$versions.support"
+    compile "com.android.support:design:$versions.support"
+
+    compile "com.hendraanggrian:bundler:$bundler"
+    annotationProcessor "com.hendraanggrian:bundler-compiler:$bundler"
+
+    compile "com.jakewharton:butterknife:$butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife"
+}

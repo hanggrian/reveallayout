@@ -23,7 +23,7 @@ import android.animation.TypeEvaluator
  * on the operation specified by the endValue (the operation for the interval between
  * PathPoints is always specified by the end point single that interval).
  */
-class PathEvaluator : TypeEvaluator<PathPoint> {
+internal class PathEvaluator : TypeEvaluator<PathPoint> {
     override fun evaluate(t: Float, startValue: PathPoint, endValue: PathPoint): PathPoint {
         val x: Float
         val y: Float

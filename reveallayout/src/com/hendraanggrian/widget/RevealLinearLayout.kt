@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import com.hendraanggrian.reveallayout.RevealableLayout
-import com.hendraanggrian.reveallayout.RevealableLayoutImpl
+import com.hendraanggrian.reveallayout.RevealLayoutImpl
 
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
@@ -15,7 +15,9 @@ class RevealLinearLayout @JvmOverloads constructor(
         attrs: AttributeSet? = null,
         defStyle: Int = 0) : io.codetail.widget.RevealLinearLayout(context, attrs, defStyle), RevealableLayout {
 
-    private val impl = RevealableLayoutImpl(context, attrs)
+    internal val impl = object : RevealLayoutImpl(context, attrs) {
+        override val layout: RevealableLayout get() = this@RevealLinearLayout
+    }
 
     override fun addView(child: View?, index: Int, params: ViewGroup.LayoutParams?) {
         super.addView(child, index, params)

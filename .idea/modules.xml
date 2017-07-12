@@ -11,7 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions/circular-reveal-extensions-circular-reveal-extensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/circular-reveal-extensions-demo/circular-reveal-extensions-demo.iml" filepath="$PROJECT_DIR$/circular-reveal-extensions-demo/circular-reveal-extensions-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example-java/example-java.iml" filepath="$PROJECT_DIR$/example-java/example-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example-kotlin/example-kotlin.iml" filepath="$PROJECT_DIR$/example-kotlin/example-kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/reveallayout.iml" filepath="$PROJECT_DIR$/reveallayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/reveallayout/reveallayout-reveallayout.iml" filepath="$PROJECT_DIR$/reveallayout/reveallayout-reveallayout.iml" />
     </modules>

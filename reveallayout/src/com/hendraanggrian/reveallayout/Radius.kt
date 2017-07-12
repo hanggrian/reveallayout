@@ -1,21 +1,22 @@
 package com.hendraanggrian.reveallayout
 
-import android.view.View
-
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
 object Radius {
-    const val NONE_DEFAULT = 1
-    const val NONE_LARGE = 2
-    const val DEFAULT_NONE = 3
-    const val LARGE_NONE = 4
 
-    fun getDefaultEndRadius(view: View): Float {
-        val cx = (view.left + view.right) / 2
-        val cy = (view.top + view.bottom) / 2
-        val dx = Math.max(cx, view.width - cx)
-        val dy = Math.max(cy, view.height - cy)
-        return Math.hypot(dx.toDouble(), dy.toDouble()).toFloat()
-    }
+    internal const val FROM_GONE = 0x00
+    internal const val FROM_DEFAULT = 0x04
+    internal const val FROM_ACTIVITY = 0x08
+    internal const val FROM_MASK = 0x0C
+
+    internal const val TO_GONE = 0x00
+    internal const val TO_DEFAULT = 0x40
+    internal const val TO_ACTIVITY = 0x80
+    internal const val TO_MASK = 0xC0
+
+    const val GONE_DEFAULT = FROM_GONE or TO_DEFAULT
+    const val GONE_ACTIVITY = FROM_GONE or TO_ACTIVITY
+    const val DEFAULT_GONE = FROM_DEFAULT or TO_GONE
+    const val ACTIVITY_GONE = FROM_ACTIVITY or TO_GONE
 }

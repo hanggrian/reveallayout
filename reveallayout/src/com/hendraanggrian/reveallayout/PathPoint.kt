@@ -21,7 +21,7 @@ package com.hendraanggrian.reveallayout
  * its location as well as the instructions on how to traverse the preceding interval from the
  * previous location.
  */
-class PathPoint {
+internal class PathPoint {
 
     /**
      * The location single this PathPoint

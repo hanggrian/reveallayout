@@ -3,10 +3,13 @@ RevealLayout
 Circular reveal animation for even lazier programmers. An extension of ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>.
 Built for even lazier programmers.
 
-Simple
-------
-<img src="https://raw.githubusercontent.com/HendraAnggrian/reveallayout/master/art/demo1.gif" width="256">
+![demo3][demo3]
 
+Usage
+-----
+![demo1][demo1] ![demo2][demo2] ![demo3][demo3]
+
+#### Simple
 Simply add target reveal id attribute in `RevealFrameLayout` or `RevealLinearLayout`.
 ```xml
 <com.hendraanggrian.reveallayout.RevealFrameLayout
@@ -28,15 +31,12 @@ This animation can also be triggered programmatically.
 RevealFrameLayout layout = (RevealFrameLayout) findById(R.id.layout);
 View target = findById(R.id.target);
 
-Animator animator = layout.animate(target);
+Animator animator = layout.reveal(target);
 animator.setDuration(500);
 animator.start();
 ```
 
-With path animation
--------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/reveallayout/master/art/demo2.gif" width="256">
-
+#### With path animation
 ```xml
 <com.hendraanggrian.reveallayout.RevealFrameLayout
     android:layout_width="match_parent"
@@ -59,34 +59,30 @@ RevealFrameLayout layout = (RevealFrameLayout) findById(R.id.layout);
 View source = findById(R.id.source);
 View target = findById(R.id.target);
 
-AnimatorSet set = layout.animateTo(source, target);
+AnimatorSet set = layout.revealTo(source, target);
 set.start();
 ```
 
-
-Activity transition
--------------------
-<img src="https://raw.githubusercontent.com/hendraanggrian/reveallayout/master/art/demo3.gif" width="256">
-
+#### Activity transition
 See example.
 
 Download
 --------
 ```gradle
 repositories {
-    jcenter()
     maven { url "https://maven.google.com" }
+    jcenter()
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.hendraanggrian:reveallayout:0.4.0'
+    compile 'com.hendraanggrian:reveallayout:0.5.0'
 }
 ```
 
 License
 -------
-    Copyright 2017 Hendra Anggrian
+    Copyright 2015 Hendra Anggrian
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -99,3 +95,7 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+[demo1]: /art/demo1.gif
+[demo2]: /art/demo2.gif
+[demo3]: /art/demo3.gif

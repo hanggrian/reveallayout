@@ -25,25 +25,25 @@ class InstrumentedTest {
 
     @Rule @JvmField var rule = ActivityTestRule(InstrumentedActivity::class.java)
 
-    //@Test
+    @Test
     @Throws(Exception::class)
     fun revealSimple() {
         onView(withId(R.id.container)).perform(replaceFragment(Test1Fragment()))
-        onView(withId(R.id.progressBar)).perform(delay(3000))
+        onView(withId(R.id.progressBar)).perform(delay(2000))
     }
 
-    //@Test
+    @Test
     @Throws(Exception::class)
     fun revealProgramatically() {
         onView(withId(R.id.container)).perform(replaceFragment(Test2Fragment()))
-        onView(withId(R.id.progressBar)).perform(delay(6000))
+        onView(withId(R.id.progressBar)).perform(delay(4000))
     }
 
     @Test
     @Throws(Exception::class)
     fun revealTo() {
         onView(withId(R.id.container)).perform(replaceFragment(Test3Fragment()))
-        onView(withId(R.id.progressBar)).perform(delay(4000))
+        onView(withId(R.id.progressBar)).perform(delay(2000))
     }
 
     fun replaceFragment(fragment: Fragment): ViewAction = object : ViewAction {

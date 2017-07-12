@@ -29,7 +29,7 @@ class Test3Fragment : Fragment() {
         card.setOnClickListener {
             AnimatorSet().apply {
                 duration = 2000
-                playTogether(layout.revealTo(button, card, Radius.DEFAULT_NONE))
+                playTogether(layout.revealTo(button, card, Radius.DEFAULT_GONE))
                 interpolator = FastOutSlowInInterpolator()
                 addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator) {

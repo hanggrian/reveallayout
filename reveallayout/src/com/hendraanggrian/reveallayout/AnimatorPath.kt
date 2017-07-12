@@ -24,7 +24,7 @@ import java.util.*
  * (which creates a line segment from the previous location) and a curve
  * location (which creates a cubic B�zier curve from the previous location).
  */
-class AnimatorPath {
+internal class AnimatorPath {
 
     // The points in the path
     internal var mPoints = ArrayList<PathPoint>()
