@@ -10,8 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import com.hendraanggrian.bundler.BindExtra
 import com.hendraanggrian.bundler.Bundler
+import com.hendraanggrian.kota.content.getColor
 import com.hendraanggrian.reveallayout.Radius
-import com.hendraanggrian.support.utils.content.colorAttr
 import kotlinx.android.synthetic.main.activity_second.*
 
 /**
@@ -36,7 +36,7 @@ class SecondActivity : AppCompatActivity() {
                 addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator?) {
                         if (Build.VERSION.SDK_INT >= 21) {
-                            window!!.statusBarColor = R.attr.colorAccent.colorAttr(this@SecondActivity)
+                            window!!.statusBarColor = theme.getColor(R.attr.colorAccent, true)
                         }
                     }
                 })
@@ -50,7 +50,7 @@ class SecondActivity : AppCompatActivity() {
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationStart(animation: Animator?) {
                     if (Build.VERSION.SDK_INT >= 21) {
-                        window!!.statusBarColor = R.attr.colorPrimaryDark.colorAttr(this@SecondActivity)
+                        window!!.statusBarColor = theme.getColor(R.attr.colorPrimaryDark, true)
                     }
                 }
 

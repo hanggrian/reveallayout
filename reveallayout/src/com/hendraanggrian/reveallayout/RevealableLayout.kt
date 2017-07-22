@@ -9,7 +9,7 @@ import android.support.v4.view.ViewCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import com.hendraanggrian.support.utils.content.isRtl
+import com.hendraanggrian.kota.content.isRtl
 import io.codetail.animation.ViewAnimationUtils
 
 /**
@@ -81,7 +81,7 @@ interface RevealableLayout {
     }
 
     companion object {
-        private fun createRect(view: View): Rect = Rect().apply {
+        private fun createRect(view: View) = Rect().apply {
             view.getDrawingRect(this)
             (view.parent as ViewGroup).offsetDescendantRectToMyCoords(view, this)
         }

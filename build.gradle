@@ -5,7 +5,7 @@ buildscript {
                     'min'   : 16,
                     'target': 25
             ],
-            buildTools    : '25.0.3',
+            buildTools    : '26.0.0',
 
             // main
             kotlin        : [
@@ -13,7 +13,7 @@ buildscript {
                     anko  : '0.10.1'
             ],
             support       : '25.4.0',
-            utils         : '0.21',
+            kota          : '0.1.4',
             circularreveal: '2.1.0',
 
             // test
@@ -22,7 +22,7 @@ buildscript {
             espresso      : '2.2.2',
             junit         : '4.12',
 
-            release       : '0.5.0'
+            release       : '0.5.1'
     ]
     repositories {
         jcenter()
@@ -31,18 +31,18 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin.stdlib"
-        classpath 'com.novoda:bintray-release:0.3.4'
+        classpath 'com.novoda:bintray-release:0.5.0'
     }
 }
 
 allprojects {
     repositories {
-        maven { url "https://maven.google.com" }
+        maven { url 'https://maven.google.com' }
         jcenter()
         maven { url 'https://jitpack.io' }
     }
-    tasks.withType(Javadoc) {
-        excludes = ['**/*.kt']
+    tasks.withType(Javadoc).all {
+        enabled = false
     }
 }
 

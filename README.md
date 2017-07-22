@@ -70,13 +70,13 @@ Download
 --------
 ```gradle
 repositories {
-    maven { url "https://maven.google.com" }
+    maven { url 'https://maven.google.com' }
     jcenter()
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.hendraanggrian:reveallayout:0.5.0'
+    compile 'com.hendraanggrian:reveallayout:0.5.1'
 }
 ```
 

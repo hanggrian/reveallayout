@@ -11,8 +11,8 @@ import android.support.v7.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hendraanggrian.kota.view.findViewBy
 import com.hendraanggrian.reveallayout.Radius
-import com.hendraanggrian.support.utils.view.findViewBy
 import com.hendraanggrian.widget.RevealFrameLayout
 
 /**

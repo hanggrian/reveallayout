@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 
 import com.hendraanggrian.bundler.BindExtra;
 import com.hendraanggrian.bundler.Bundler;
+import com.hendraanggrian.kota.content.ThemesKt;
 import com.hendraanggrian.reveallayout.Radius;
 import com.hendraanggrian.reveallayout.RevealableLayout;
-import com.hendraanggrian.support.utils.content.ThemesKt;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,7 +46,7 @@ public class SecondActivity extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     if (Build.VERSION.SDK_INT >= 21) {
-                        getWindow().setStatusBarColor(ThemesKt.colorAttr(R.attr.colorAccent, SecondActivity.this));
+                        getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorAccent, true));
                     }
                 }
             });
@@ -62,7 +62,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation) {
                 if (Build.VERSION.SDK_INT >= 21) {
-                    getWindow().setStatusBarColor(ThemesKt.colorAttr(R.attr.colorPrimaryDark, SecondActivity.this));
+                    getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorPrimaryDark, true));
                 }
             }
 
