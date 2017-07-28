@@ -9,7 +9,7 @@ import android.support.v4.view.ViewCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import com.hendraanggrian.kota.content.isRtl
+import com.hendraanggrian.kota.content.res.isRtl
 import io.codetail.animation.ViewAnimationUtils
 
 /**

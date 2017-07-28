@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     @BindView(R.id.button) FloatingActionButton button;
 
@@ -24,11 +24,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        findViewById(R.id.button).setOnClickListener(v -> {
-            Intent intent = new Intent(this, SecondActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            intent.putExtra(SecondActivity.EXTRA_RECT, createRect(button));
-            startActivity(intent);
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity2.this, SecondActivity2.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                intent.putExtra(SecondActivity2.EXTRA_RECT, createRect(button));
+                startActivity(intent);
+            }
         });
     }
 

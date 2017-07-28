@@ -11,7 +11,6 @@ import android.support.v7.widget.CardView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hendraanggrian.kota.view.findViewBy
 import com.hendraanggrian.reveallayout.Radius
 import com.hendraanggrian.widget.RevealFrameLayout
 
@@ -23,9 +22,9 @@ class Test3Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? = LayoutInflater.from(context).inflate(R.layout.fragment_test3, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val layout = view.findViewBy<RevealFrameLayout>(R.id.layout)
-        val card = view.findViewBy<CardView>(R.id.card)
-        val button = view.findViewBy<FloatingActionButton>(R.id.button)
+        val layout = view.findViewById<RevealFrameLayout>(R.id.layout)
+        val card = view.findViewById<CardView>(R.id.card)
+        val button = view.findViewById<FloatingActionButton>(R.id.button)
         card.setOnClickListener {
             AnimatorSet().apply {
                 duration = 2000

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.hendraanggrian.bundler.BindExtra;
 import com.hendraanggrian.bundler.Bundler;
-import com.hendraanggrian.kota.content.ThemesKt;
+import com.hendraanggrian.kota.content.res.ThemesKt;
 import com.hendraanggrian.reveallayout.Radius;
 import com.hendraanggrian.reveallayout.RevealableLayout;
 
@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 /**
  * @author Hendra Anggrian (hendraanggrian@gmail.com)
  */
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity2 extends AppCompatActivity {
 
     public static final String EXTRA_RECT = "com.example.circularreveal.CustomActivity2";
 
@@ -39,18 +39,21 @@ public class SecondActivity extends AppCompatActivity {
         Bundler.bindExtras(this);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-        layout.post(() -> {
-            Animator animator = revealLayout.reveal(layout, rect.centerX(), rect.centerY(), Radius.GONE_ACTIVITY);
-            animator.setDuration(1000);
-            animator.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    if (Build.VERSION.SDK_INT >= 21) {
-                        getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorAccent, true));
+        layout.post(new Runnable() {
+            @Override
+            public void run() {
+                Animator animator = revealLayout.reveal(layout, rect.centerX(), rect.centerY(), Radius.GONE_ACTIVITY);
+                animator.setDuration(1000);
+                animator.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        if (Build.VERSION.SDK_INT >= 21) {
+                            getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorAccent, true));
+                        }
                     }
-                }
-            });
-            animator.start();
+                });
+                animator.start();
+            }
         });
     }
 

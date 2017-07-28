@@ -26,10 +26,8 @@ android {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin.stdlib"
-    compile "com.android.support:support-v4:$versions.support"
     compile "com.github.ozodrukh.CircularReveal:circualreveal:$versions.circularreveal"
     compile "com.hendraanggrian:kota:$versions.kota"
-
     androidTestCompile "org.jetbrains.anko:anko-commons:$versions.kotlin.anko"
     androidTestCompile "com.android.support:design:$versions.support"
     androidTestCompile "com.android.support:cardview-v7:$versions.support"
