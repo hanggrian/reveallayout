@@ -13,7 +13,7 @@ buildscript {
                     anko  : '0.10.1'
             ],
             support       : '26.0.0',
-            kota          : '0.2.2',
+            kota          : '0.4.0',
             circularreveal: '2.1.0',
 
             // test
@@ -22,7 +22,7 @@ buildscript {
             espresso      : '2.2.2',
             junit         : '4.12',
 
-            release       : '0.5.2'
+            release       : '0.5.3'
     ]
     repositories {
         jcenter()

@@ -1,3 +1,5 @@
+@file:JvmName("Radius")
+
 package com.hendraanggrian.reveallayout
 
 /**

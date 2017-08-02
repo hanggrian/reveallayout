@@ -10,7 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import com.hendraanggrian.bundler.BindExtra
 import com.hendraanggrian.bundler.Bundler
-import com.hendraanggrian.kota.content.res.getColor
+import com.hendraanggrian.kota.content.getColor
 import com.hendraanggrian.reveallayout.Radius
 import kotlinx.android.synthetic.main.activity_second.*
 

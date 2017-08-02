@@ -1,3 +1,5 @@
+@file:JvmName("RevealableLayout")
+
 package com.hendraanggrian.reveallayout
 
 import android.animation.Animator
@@ -9,7 +11,7 @@ import android.support.v4.view.ViewCompat
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import com.hendraanggrian.kota.content.res.isRtl
+import com.hendraanggrian.kota.content.isRtl
 import io.codetail.animation.ViewAnimationUtils
 
 /**

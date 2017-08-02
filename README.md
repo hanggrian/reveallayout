@@ -76,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.hendraanggrian:reveallayout:0.5.2'
+    compile 'com.hendraanggrian:reveallayout:0.5.3'
 }
 ```
 

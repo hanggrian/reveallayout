@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.hendraanggrian.bundler.BindExtra;
 import com.hendraanggrian.bundler.Bundler;
-import com.hendraanggrian.kota.content.res.ThemesKt;
+import com.hendraanggrian.kota.content.Themes;
 import com.hendraanggrian.reveallayout.Radius;
 import com.hendraanggrian.reveallayout.RevealableLayout;
 
@@ -48,7 +48,7 @@ public class SecondActivity2 extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         if (Build.VERSION.SDK_INT >= 21) {
-                            getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorAccent, true));
+                            getWindow().setStatusBarColor(Themes.getColor(getTheme(), R.attr.colorAccent, true));
                         }
                     }
                 });
@@ -65,7 +65,7 @@ public class SecondActivity2 extends AppCompatActivity {
             @Override
             public void onAnimationStart(Animator animation) {
                 if (Build.VERSION.SDK_INT >= 21) {
-                    getWindow().setStatusBarColor(ThemesKt.getColor(getTheme(), R.attr.colorPrimaryDark, true));
+                    getWindow().setStatusBarColor(Themes.getColor(getTheme(), R.attr.colorPrimaryDark, true));
                 }
             }
 
