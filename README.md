@@ -1,6 +1,4 @@
-[![download](https://api.bintray.com/packages/hendraanggrian/maven/reveallayout/images/download.svg)](https://bintray.com/hendraanggrian/maven/reveallayout/_latestVersion)
-[![build](https://travis-ci.com/hendraanggrian/reveallayout.svg)](https://travis-ci.com/hendraanggrian/reveallayout)
-[![license](https://img.shields.io/github/license/hendraanggrian/bannerbar)](http://www.apache.org/licenses/LICENSE-2.0)
+[![license](https://img.shields.io/github/license/hendraanggrian/reveallayout)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### This library is no longer maintained.
 
