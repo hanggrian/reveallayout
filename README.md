@@ -1,3 +1,9 @@
+[![download](https://api.bintray.com/packages/hendraanggrian/maven/reveallayout/images/download.svg)](https://bintray.com/hendraanggrian/maven/reveallayout/_latestVersion)
+[![build](https://travis-ci.com/hendraanggrian/reveallayout.svg)](https://travis-ci.com/hendraanggrian/reveallayout)
+[![license](https://img.shields.io/github/license/hendraanggrian/bannerbar)](http://www.apache.org/licenses/LICENSE-2.0)
+
+> This library is no longer maintained.
+
 RevealLayout
 ============
 Circular reveal animation for even lazier programmers. An extension of ozodrukh's <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal<a/>.
@@ -79,22 +85,6 @@ dependencies {
     compile 'com.hendraanggrian:reveallayout:0.5.3'
 }
 ```
-
-License
--------
-    Copyright 2015 Hendra Anggrian
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
 
 [demo1]: /art/demo1.gif
 [demo2]: /art/demo2.gif
