@@ -2,7 +2,7 @@
 [![build](https://travis-ci.com/hendraanggrian/reveallayout.svg)](https://travis-ci.com/hendraanggrian/reveallayout)
 [![license](https://img.shields.io/github/license/hendraanggrian/bannerbar)](http://www.apache.org/licenses/LICENSE-2.0)
 
-> This library is no longer maintained.
+### This library is no longer maintained.
 
 RevealLayout
 ============
